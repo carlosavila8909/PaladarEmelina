@@ -1,0 +1,30 @@
+﻿@{
+    ViewBag.Titulo_pagina = Resources.PaladarHostal.Negocio;
+}
+
+@section breadcrumb{
+    <span class="padd_breadcrumb">
+        <i class="ion-ios-arrow-forward padd_breadcrumb"></i>
+        @Resources.PaladarHostal.Negocio
+    </span>
+}
+
+<div class="space-20"></div>
+<div class="overflow-hidden">
+    <div class="container" id="historia">
+        <div class="row vertical-align-child">
+            <div class="col-md-6 text-center">
+                <p>
+                    @Resources.PaladarHostal.Primera_parte
+                </p>
+                <blockquote>
+                    @Resources.PaladarHostal.Segunda_parte
+                </blockquote>
+                <div class="space-30"></div>
+            </div>
+            <div class="col-md-6">
+                <img src="@Url.Content("~/Content/combine1.png")" alt="" class="img-responsive">
+            </div>
+        </div>
+    </div>
+</div>

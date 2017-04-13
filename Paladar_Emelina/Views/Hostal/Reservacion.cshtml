@@ -1,0 +1,202 @@
+﻿@model Reservacion_Hostal_Model
+@{
+    Layout = "~/Views/Shared/_LayoutHostal.cshtml";
+}
+
+@section CSS{
+    <link href="@Url.Content("~/Content/font-awesome/css/font-awesome.min.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/Content/simple-line-icons/simple-line-icons.min.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/Content/Site.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/Content/bootstrap-datepicker/css/datepicker3.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/Content/icheck/skins/all.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/Content/plugins-md.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/Content/bootstrap-select/bootstrap-select.min.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/Content/select2/select2.css")" rel="stylesheet" />
+}
+
+<style>
+    .back_color{background-color:#f5f5f5 !important;}
+    .classbtn {min-height:49px !important;min-width:49px !important;margin-top:28px;padding:0px !important;border:1px solid #e8e8e8 !important;background:#f5f5f5 !important;}
+    .classbtnreserv{background-color:#d14841 !important;border-color:#d14841 !important;height:44px !important;font-size:0.75rem !important;font-weight:500 !important;text-transform:uppercase;}
+</style>
+
+<div style="text-align:center;margin-top:20px;">
+    <i class="ion-ios-home color_icon"></i>
+    @Html.ActionLink(Resources.PaladarHostal.Principal, "Mostrar", "Hostal", null, new { @class = "color_breadcrumb" })
+
+    <span class="padd_breadcrumb">
+        <i class="ion-ios-arrow-forward padd_breadcrumb color_icon"></i>
+        <span class="color_icon">@Resources.PaladarHostal.Reservacion</span>
+    </span>
+</div>
+
+<section class="mbr-section" id="form1-5" style="background-color: rgb(255, 255, 255); padding-top: 30px; padding-bottom: 30px;">
+    <div class="mbr-section mbr-section__container mbr-section__container--middle" style="padding-bottom:20px !important;">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 text-xs-center">
+                    <h3 class="mbr-section-title display-2">@Resources.PaladarHostal.Solicitud_reservacion</h3>
+                    <small class="mbr-section-subtitle">@Resources.PaladarHostal.Descripcion_solicitud_reservacion</small>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="mbr-section mbr-section-nopadding">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 col-lg-10 col-lg-offset-1" data-form-type="formoid">
+                    @using (Html.BeginForm())
+                    {
+                        @Html.AntiForgeryToken()
+                        @Html.ValidationSummary("", new { id = "ul_errores" })
+                        @Html.Hidden("h_idioma", UICulture)
+
+                        <div class="alert alert-info text-center" id="alert_info" style="display:none;">
+                            @Resources.PaladarHostal.Info_Reservacion
+                        </div>
+
+                        <div class="row row-sm-offset">
+                            <div class="col-xs-12 col-md-5">
+                                <div class="form-group">
+                                    <div class="form-group text-left">
+                                        <div class="input-group date date-picker" data-date-format="dd/mm/yyyy" data-date-start-date="+0d">
+                                            @Html.LabelFor(m => m.fecha_entrada, Resources.PaladarHostal.Fecha_entrada, new { @class = "form-control-label" })
+                                            @Html.TextBoxFor(m=> m.fecha_entrada, new { @class = "form-control back_color" })
+                                            <span class="input-group-btn">
+                                                <button class="btn default classbtn" type="button"><i class="fa fa-calendar" style="font-size:14px !important;"></i></button>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-xs-12 col-md-5">
+                                <div class="form-group">
+                                    <div class="form-group text-left">
+                                        <div class="input-group date date-picker" data-date-format="dd/mm/yyyy" data-date-start-date="+0d">
+                                            @Html.LabelFor(m => m.fecha_salida, Resources.PaladarHostal.Fecha_salida, new { @class = "form-control-label" })
+                                            @Html.TextBoxFor(m => m.fecha_salida, new { @class = "form-control back_color" })
+                                            <span class="input-group-btn">
+                                                <button class="btn default classbtn" type="button"><i class="fa fa-calendar" style="font-size:14px !important;"></i></button>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-xs-12 col-md-4">
+                                <div class="form-group">
+                                    @Html.LabelFor(m => m.nombre_apellidos, Resources.PaladarHostal.Nombre_apellidos, new { @class = "form-control-label" })
+                                    @Html.TextBoxFor(m => m.nombre_apellidos, new { @class = "form-control back_color" })
+                                </div>
+                            </div>
+
+                            <div class="col-xs-12 col-md-4">
+                                <div class="form-group">
+                                    @Html.LabelFor(m => m.pais, Resources.PaladarHostal.Pais, new { @class = "form-control-label" })
+                                    @Html.TextBoxFor(m => m.pais, new { @class = "form-control back_color" })
+                                </div>
+                            </div>
+
+                            <div class="col-xs-12 col-md-4">
+                                <div class="form-group">
+                                    @Html.LabelFor(m=> m.email, Resources.PaladarHostal.Correo, new { @class = "form-control-label" })
+                                    @Html.TextBoxFor(m => m.email, new { @class = "form-control back_color" })
+                                </div>
+                            </div>
+
+                            <div class="col-xs-12 col-md-4">
+                                <div class="form-group">
+                                    @Html.LabelFor(m=> m.cant_acompannantes, Resources.PaladarHostal.Acompannantes, new { @class = "form-control-label" })
+                                    @Html.DropDownListFor(m=> m.cant_acompannantes, new SelectList(new List<int>() { 1, 2, 3, 4, 5, 6 }), new { @class = "form-control", style = "height:49px !important;" })
+                                </div>
+                            </div>
+
+                            <div class="col-xs-12 col-md-5">
+                                <div class="form-group">
+                                    @Html.HiddenFor(m=> m.habitaciones)
+                                    <label>@Resources.PaladarHostal.Habitaciones</label>
+                                    <div class="input-group">
+                                        <div class="icheck-list">
+                                            <label>
+                                                <input type="checkbox" id="chk_hab1" class="icheck" data-checkbox="icheckbox_square-red"> <span style="font-size:0.875rem !important;">@Resources.PaladarHostal.Habitacion_1</span>
+                                            </label>
+                                            <label>
+                                                <input type="checkbox" id="chk_hab2" class="icheck" data-checkbox="icheckbox_square-red"> <span style="font-size:0.875rem !important;">@Resources.PaladarHostal.Habitacion_2</span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            @Html.LabelFor(m => m.mensaje_adicional, Resources.PaladarHostal.Mensaje_adicional, new { @class = "form-control-label" })
+                            @Html.TextAreaFor(m=> m.mensaje_adicional,  new { @class = "form-control", rows = "5" })
+                        </div>
+                        <div><button type="submit" class="btn btn-primary btn-lg classbtnreserv">@Resources.PaladarHostal.Reservar</button></div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+@section Scripts{
+    @Scripts.Render("~/bundles/jqueryval")
+    <script src="@Url.Content("~/Content/bootstrap-datepicker/js/bootstrap-datepicker.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Content/icheck/icheck.min.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/form-icheck.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/components-pickers.js")" type="text/javascript"></script>
+
+    <script src="@Url.Content("~/Content/bootstrap-select/bootstrap-select.min.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Content/select2/select2.min.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/components-dropdowns.js")" type="text/javascript"></script>
+
+    <script src="@Url.Content("~/Scripts/metronic.js")" type="text/javascript"></script>
+
+    <script>
+        jQuery(document).ready(function () {
+            Metronic.init();
+            ComponentsPickers.init();
+            FormiCheck.init();
+            ComponentsDropdowns.init();
+
+            var hab = "@ViewBag.habitaciones";
+            if (hab != "") {
+                var arr_habits = hab.split("|");
+                for (var i = 0; i < arr_habits.length - 1; i++) {
+                    var id_checkbox = ".icheck-list > label:nth-child(" + arr_habits[i] + ") > div:nth-child(1) > ins:nth-child(2)";
+                    $(id_checkbox).click();
+                }
+            }
+
+            var msg = "@ViewBag.msg";
+            if (msg == "OK") {
+                $("#alert_info").css("display", "");
+                setTimeout(function () {
+                    $("#alert_info").css("display", "none");
+                }, 15000);
+            }
+
+            $(this).on("submit", function (event) {
+                var chek_hab1 = $("#chk_hab1").prop("checked");
+                var chek_hab2 = $("#chk_hab2").prop("checked");
+
+                var arr_hab = new Array();
+                if (chek_hab1)
+                    arr_hab.push(1);
+
+                if (chek_hab2)
+                    arr_hab.push(2);
+                
+                var valor_h_hab = "";
+                if (arr_hab.length > 0) {
+                    for (var i = 0; i < arr_hab.length; i++) {
+                        valor_h_hab += arr_hab[i] + "|";
+                    }
+                }
+                $("#habitaciones").val(valor_h_hab);
+            });
+        });
+    </script>
+}

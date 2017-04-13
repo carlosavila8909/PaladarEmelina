@@ -1,0 +1,639 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Abril" xml:space="preserve">
+    <value>Avril</value>
+  </data>
+  <data name="Acompannantes" xml:space="preserve">
+    <value>Acompañantes</value>
+  </data>
+  <data name="Agosto" xml:space="preserve">
+    <value>Août</value>
+  </data>
+  <data name="Anno" xml:space="preserve">
+    <value>Année</value>
+  </data>
+  <data name="Anterior" xml:space="preserve">
+    <value>Précédent</value>
+  </data>
+  <data name="Banno_interior" xml:space="preserve">
+    <value>Intérieur du bain - eau froide / chaude 24 heures</value>
+  </data>
+  <data name="Bienvenido" xml:space="preserve">
+    <value>Bienvenue</value>
+  </data>
+  <data name="Cancelar" xml:space="preserve">
+    <value>Annuler</value>
+  </data>
+  <data name="Cancelar_reservacion" xml:space="preserve">
+    <value>Pour annuler ou modifier votre réservation accéder à l'adresse suivante</value>
+  </data>
+  <data name="Cancelar_reservacion_cliente" xml:space="preserve">
+    <value>Nous regrettons qu'il a été annulé votre réservation avec les données</value>
+  </data>
+  <data name="Cerrado" xml:space="preserve">
+    <value>Fermé</value>
+  </data>
+  <data name="Cerrar" xml:space="preserve">
+    <value>Fermer</value>
+  </data>
+  <data name="Chefs" xml:space="preserve">
+    <value>Nos Chefs</value>
+  </data>
+  <data name="Click_arrastrar" xml:space="preserve">
+    <value>Cliquez ou faites glisser une image</value>
+  </data>
+  <data name="Comentarios" xml:space="preserve">
+    <value>Commentaires</value>
+  </data>
+  <data name="Comentarios_recientes" xml:space="preserve">
+    <value>Commentaires récents</value>
+  </data>
+  <data name="Comentario_comentario" xml:space="preserve">
+    <value>Comentario...</value>
+  </data>
+  <data name="Comentar_ahora" xml:space="preserve">
+    <value>Commentaire maintenant ...</value>
+  </data>
+  <data name="Conexion_internet" xml:space="preserve">
+    <value>Connexion Internet</value>
+  </data>
+  <data name="Conozca_equipo" xml:space="preserve">
+    <value>Rencontrez l'équipe</value>
+  </data>
+  <data name="Contactenos" xml:space="preserve">
+    <value>Contactez-nous</value>
+  </data>
+  <data name="Contrasenna" xml:space="preserve">
+    <value>Mot de passe</value>
+  </data>
+  <data name="Copyright" xml:space="preserve">
+    <value>Tous droits réservés</value>
+  </data>
+  <data name="Correo" xml:space="preserve">
+    <value>Courrier électronique</value>
+  </data>
+  <data name="Cortesia_casa" xml:space="preserve">
+    <value>Courtoisie de la Chambre</value>
+  </data>
+  <data name="Credenciales" xml:space="preserve">
+    <value>Ses références sont</value>
+  </data>
+  <data name="Credenciales_invalidas" xml:space="preserve">
+    <value>Titres de compétence ne sont pas valides.</value>
+  </data>
+  <data name="Datos_contacto" xml:space="preserve">
+    <value>Contacter avec le</value>
+  </data>
+  <data name="Datos_reservacion" xml:space="preserve">
+    <value>Contacter avec le de réservation</value>
+  </data>
+  <data name="Deja_comentario" xml:space="preserve">
+    <value>POST VOTRE COMMENTAIRE</value>
+  </data>
+  <data name="Denegar_correo" xml:space="preserve">
+    <value>Votre réservation a été refusée, ne peut pas communiquer avec votre courrier.</value>
+  </data>
+  <data name="Descripcion_conexion_internet" xml:space="preserve">
+    <value>Nous offrons service Internet par réseau WIFI de notre maison pour assurer votre confort.</value>
+  </data>
+  <data name="Descripcion_galeria_hostal" xml:space="preserve">
+    <value>Nous allons vous montrer une collection de photographies de notre maison, qui servira de voie de connaître notre entreprise. Vous aurez la chance de voir les chambres, le garage et bien MAAS. Ne perdez pas de temps, nous rendre visite !!!</value>
+  </data>
+  <data name="Descripcion_galeria_imagenes" xml:space="preserve">
+    <value>Nous vous invitons à partager avec nous leurs expériences dans le magnifique Trinidad de Cuba, offrant des images à notre galerie téléchargeant où vous pourrez profiter d'une sélection des meilleures photos prises dans notre palais. Ne perdez pas de temps, nous assurons une attention exquise!</value>
+  </data>
+  <data name="Descripcion_habitaciones" xml:space="preserve">
+    <value>Agréable et sûr pour vos chambres de confort.</value>
+  </data>
+  <data name="Descripcion_publicidad1" xml:space="preserve">
+    <value>Profitez de la variété et deliciousness de nos aliments</value>
+  </data>
+  <data name="Descripcion_publicidad1_hostal" xml:space="preserve">
+    <value>Garantizamos comodidad y deleite al máximo.</value>
+  </data>
+  <data name="Descripcion_publicidad2" xml:space="preserve">
+    <value>Nous offrons un service rapide et de haute qualité</value>
+  </data>
+  <data name="Descripcion_publicidad2_hostal" xml:space="preserve">
+    <value>Un service de qualité Bridamos où vous êtes notre priorité.</value>
+  </data>
+  <data name="Descripcion_publicidad3" xml:space="preserve">
+    <value>Un excellent choix pour profiter d'un repas de famille</value>
+  </data>
+  <data name="Descripcion_publicidad3_hostal" xml:space="preserve">
+    <value>Nous travaillons pour offrir une expérience agréable et stimulante.</value>
+  </data>
+  <data name="Descripcion_Reservar" xml:space="preserve">
+    <value>Nous vous donnons la possibilité de réserver nos papilles avec les jours avant et quand bon vous semble. Il suffit d'envoyer une demande avec votre nom complet, nombre de personnes et la date que vous souhaitez réserver.</value>
+  </data>
+  <data name="Descripcion_servicio_garage" xml:space="preserve">
+    <value>Vous trouverez un endroit avec les conditions nécessaires pour en toute sécurité et de manière fiable garer votre voiture dans notre garage.</value>
+  </data>
+  <data name="Descripcion_servicio_lavanderia" xml:space="preserve">
+    <value>Nous offrons un moyen rapide et efficace pour vous et votre linge de famille.</value>
+  </data>
+  <data name="Descripcion_servicio_paladar" xml:space="preserve">
+    <value>Vous pourrez déguster des plats délicieux et divers dans notre Paladar d'affaires, nous serons heureux de vous servir.</value>
+  </data>
+  <data name="Descripcion_solicitud_reservacion" xml:space="preserve">
+    <value>Nous serons heureux de vous accueillir dans notre maison.</value>
+  </data>
+  <data name="Desea_eliminar_reservacion" xml:space="preserve">
+    <value>Pour supprimer la réservation</value>
+  </data>
+  <data name="Detalles" xml:space="preserve">
+    <value>Détails</value>
+  </data>
+  <data name="Diciembre" xml:space="preserve">
+    <value>Décembre</value>
+  </data>
+  <data name="Direccion" xml:space="preserve">
+    <value>Adresse</value>
+  </data>
+  <data name="Direccion_negocio" xml:space="preserve">
+    <value>Rue Chanzoneta #271 entre San Procopio et Luz, Trinidad.</value>
+  </data>
+  <data name="Domingo" xml:space="preserve">
+    <value>Dimanche</value>
+  </data>
+  <data name="Eliminar" xml:space="preserve">
+    <value>Supprimer</value>
+  </data>
+  <data name="Eliminar_imagen" xml:space="preserve">
+    <value>Supprimer l'image</value>
+  </data>
+  <data name="Eliminar_reservacion" xml:space="preserve">
+    <value>Supprimer réservation</value>
+  </data>
+  <data name="Enero" xml:space="preserve">
+    <value>Janvier</value>
+  </data>
+  <data name="Entrar" xml:space="preserve">
+    <value>Entrer</value>
+  </data>
+  <data name="Enviar_mensaje" xml:space="preserve">
+    <value>Envoyer un message</value>
+  </data>
+  <data name="Error_crear_reservacion" xml:space="preserve">
+    <value>Impossible de faire une réservation, essayer à nouveau.</value>
+  </data>
+  <data name="Error_eliminar_image" xml:space="preserve">
+    <value>Une erreur est survenue lors de la tentative de suppression de l'image.</value>
+  </data>
+  <data name="Error_eliminar_reservacion" xml:space="preserve">
+    <value>Impossible de supprimer la réservation, essayez à nouveau.</value>
+  </data>
+  <data name="Error_Email" xml:space="preserve">
+    <value>L'e-mail saisie est invalide.</value>
+  </data>
+  <data name="Error_fecha_reservacion" xml:space="preserve">
+    <value>La date que vous avez sélectionné a expiré.</value>
+  </data>
+  <data name="Error_horario_reservacion" xml:space="preserve">
+    <value>Calendrier de réservation est 11:00 AM - 09:00 PM.</value>
+  </data>
+  <data name="Error_imagen_tamanno" xml:space="preserve">
+    <value>L'image dépasse 10MB</value>
+  </data>
+  <data name="Error_ubicacion" xml:space="preserve">
+    <value>Nous sommes désolés! Nous ne pouvons pas efrecerle lieu à ce moment.</value>
+  </data>
+  <data name="Espanol" xml:space="preserve">
+    <value>Espagnol</value>
+  </data>
+  <data name="Existe_reservacion_hostal" xml:space="preserve">
+    <value>Il existe déjà une réservation pour la date sélectionnée chambres.</value>
+  </data>
+  <data name="Febrero" xml:space="preserve">
+    <value>Février</value>
+  </data>
+  <data name="Fecha" xml:space="preserve">
+    <value>Date</value>
+  </data>
+  <data name="Fecha_entrada" xml:space="preserve">
+    <value>Date d'entrée</value>
+  </data>
+  <data name="Fecha_ent_may_sal" xml:space="preserve">
+    <value>La date d'entrée ne peut pas être supérieur au départ.</value>
+  </data>
+  <data name="Fecha_salida" xml:space="preserve">
+    <value>Date d'sortie</value>
+  </data>
+  <data name="Footer_primero_hostal" xml:space="preserve">
+    <value>Nous travaillons pour vous, nos précieux clients, afin d'offrir un service de qualité et de confort. Nous offrons également un service</value>
+  </data>
+  <data name="Footer_segundo_hostal" xml:space="preserve">
+    <value>où nous assurons un endroit pour déguster de délicieuses boissons et profiter d'une riche diversité d'aliments indigènes disponibles 24 heures. Ne perdez pas de temps, nous rendre visite !!!</value>
+  </data>
+  <data name="Frances" xml:space="preserve">
+    <value>Français</value>
+  </data>
+  <data name="Frase" xml:space="preserve">
+    <value>Faire cuire le tout par rapport conduira à une expérience incroyable dégustation</value>
+  </data>
+  <data name="Galeria" xml:space="preserve">
+    <value>Galerie</value>
+  </data>
+  <data name="Galeria_imagenes" xml:space="preserve">
+    <value>Galerie d'images</value>
+  </data>
+  <data name="Garage" xml:space="preserve">
+    <value>Stationnement</value>
+  </data>
+  <data name="Gracias_preferencia" xml:space="preserve">
+    <value>Nous vous remercions de nous avoir choisi, notre équipe vous souhaite une bonne journée.</value>
+  </data>
+  <data name="Guardar" xml:space="preserve">
+    <value>Sauvegarder</value>
+  </data>
+  <data name="Habitaciones" xml:space="preserve">
+    <value>Chambres</value>
+  </data>
+  <data name="Habitacion_1" xml:space="preserve">
+    <value>Première chambre</value>
+  </data>
+  <data name="Habitacion_2" xml:space="preserve">
+    <value>Deuxième chambre</value>
+  </data>
+  <data name="Habitacion_doble" xml:space="preserve">
+    <value>Chambre double</value>
+  </data>
+  <data name="Habitacion_sencilla" xml:space="preserve">
+    <value>Chambre simple</value>
+  </data>
+  <data name="Hasta_el" xml:space="preserve">
+    <value>jusqu'au</value>
+  </data>
+  <data name="Hora" xml:space="preserve">
+    <value>Temps</value>
+  </data>
+  <data name="Horario" xml:space="preserve">
+    <value>Calendrier</value>
+  </data>
+  <data name="Horario_Datos" xml:space="preserve">
+    <value>Horaire et information d'intérêt</value>
+  </data>
+  <data name="Hostal" xml:space="preserve">
+    <value>Maison à louer</value>
+  </data>
+  <data name="Idioma" xml:space="preserve">
+    <value>Langage</value>
+  </data>
+  <data name="Imagen" xml:space="preserve">
+    <value>Image</value>
+  </data>
+  <data name="Imagenes" xml:space="preserve">
+    <value>Images</value>
+  </data>
+  <data name="Informacion" xml:space="preserve">
+    <value>Information</value>
+  </data>
+  <data name="Info_Reservacion" xml:space="preserve">
+    <value>Informations! Votre réservation a réussi.</value>
+  </data>
+  <data name="Ingles" xml:space="preserve">
+    <value>Anglais</value>
+  </data>
+  <data name="Jueves" xml:space="preserve">
+    <value>Jeudi</value>
+  </data>
+  <data name="Julio" xml:space="preserve">
+    <value>Julio</value>
+  </data>
+  <data name="Junio" xml:space="preserve">
+    <value>Juin</value>
+  </data>
+  <data name="Latitud" xml:space="preserve">
+    <value>Latitude</value>
+  </data>
+  <data name="Lavanderia" xml:space="preserve">
+    <value>Blanchisserie</value>
+  </data>
+  <data name="Longitud" xml:space="preserve">
+    <value>Longueur</value>
+  </data>
+  <data name="Lunes" xml:space="preserve">
+    <value>Lundi</value>
+  </data>
+  <data name="Martes" xml:space="preserve">
+    <value>Mardi</value>
+  </data>
+  <data name="Marzo" xml:space="preserve">
+    <value>Mars</value>
+  </data>
+  <data name="Mas_comentarios" xml:space="preserve">
+    <value>Plus de commentaires ...</value>
+  </data>
+  <data name="Mayo" xml:space="preserve">
+    <value>Mai</value>
+  </data>
+  <data name="Mensaje" xml:space="preserve">
+    <value>Message</value>
+  </data>
+  <data name="Mensaje_adicional" xml:space="preserve">
+    <value>Message supplémentaire</value>
+  </data>
+  <data name="Mensaje_enviado" xml:space="preserve">
+    <value>Le message a été envoyé avec succès.</value>
+  </data>
+  <data name="Mensaje_error" xml:space="preserve">
+    <value>Une erreur est survenue lors de l'envoi du message, essayez à nouveau.</value>
+  </data>
+  <data name="Menu" xml:space="preserve">
+    <value>Le menu</value>
+  </data>
+  <data name="Mes" xml:space="preserve">
+    <value>Mois</value>
+  </data>
+  <data name="Miercoles" xml:space="preserve">
+    <value>Mercredi</value>
+  </data>
+  <data name="Minibar" xml:space="preserve">
+    <value>Minibar</value>
+  </data>
+  <data name="Modificar_reservacion" xml:space="preserve">
+    <value>Modifier la réservation</value>
+  </data>
+  <data name="Negocio" xml:space="preserve">
+    <value>Notre entreprise</value>
+  </data>
+  <data name="Negocio_Hostal" xml:space="preserve">
+    <value>Emelina Hostal Santander est une maison moderne, est situé dans la belle ville de Trinidad. L'établissement dispose de 2 chambres climatisées, chacune avec salle de bains avec de l'eau froide et chaude 24 heures, et un garage privé avec espace pour 2 voitures. délicieux petit déjeuner, le déjeuner et les repas traditionnels cubains: services gastronomie disponibles est proposée. Il dispose d'un patio intérieur spacieux avec 2 chaises pour profiter d'un coucher de soleil exceptionnel, aussi il comprend un portail, un salon et la cuisine, qui est entièrement équipée avec cuisinière électrique, micro-ondes et fer à repasser. La maison a une capacité totale de 6 personnes. Nous assurons un stimulant dans l'une de ses destinations préférées pour les vacances dans le tourisme Cuba.</value>
+  </data>
+  <data name="Noche" xml:space="preserve">
+    <value>nuit</value>
+  </data>
+  <data name="Nombre_apellidos" xml:space="preserve">
+    <value>Prénom et nom</value>
+  </data>
+  <data name="Nombre_apellidos_comentario" xml:space="preserve">
+    <value>Prénom et nom....</value>
+  </data>
+  <data name="Noviembre" xml:space="preserve">
+    <value>Novembre</value>
+  </data>
+  <data name="Nuestros" xml:space="preserve">
+    <value>Notre</value>
+  </data>
+  <data name="Octubre" xml:space="preserve">
+    <value>Octobre</value>
+  </data>
+  <data name="Pais" xml:space="preserve">
+    <value>Pays</value>
+  </data>
+  <data name="Paladar" xml:space="preserve">
+    <value>Le restaurant</value>
+  </data>
+  <data name="Persona" xml:space="preserve">
+    <value>personne</value>
+  </data>
+  <data name="Personas" xml:space="preserve">
+    <value>personnes</value>
+  </data>
+  <data name="Primera_parte" xml:space="preserve">
+    <value>Nous offrons un service de qualité où votre satisfaction est notre priorité. Un endroit idéal pour déguster de délicieuses boissons et profiter d'une riche diversité d'aliments indigènes, assurer un tourisme sain Trinité, l'une de ses destinations de vacances préférées à Cuba.</value>
+  </data>
+  <data name="Principal" xml:space="preserve">
+    <value>Principale</value>
+  </data>
+  <data name="Publicidad_hostal1" xml:space="preserve">
+    <value>Nous travaillons pour vous, nos précieux clients, afin de fournir un service de qualité et de satisfaction. Nous offrons également un service</value>
+  </data>
+  <data name="Publicidad_hostal2" xml:space="preserve">
+    <value>où nous vous assurons un séjour avec toute l'attention que vous méritez, chambres confortables et sûres, le petit déjeuner, le déjeuner et les repas traditionnels cubains pour votre plus grand plaisir. Ne perdez pas de temps, nous rendre visite !!!</value>
+  </data>
+  <data name="Required_acompannantes" xml:space="preserve">
+    <value>Le champ chaperons est nécessaire.</value>
+  </data>
+  <data name="Required_comentario" xml:space="preserve">
+    <value>Le champ de commentaire est obligatoire.</value>
+  </data>
+  <data name="Required_email" xml:space="preserve">
+    <value>Le champ Email est requis.</value>
+  </data>
+  <data name="Required_fecha" xml:space="preserve">
+    <value>Champ Date est obligatoire.</value>
+  </data>
+  <data name="Required_fecha_entrada" xml:space="preserve">
+    <value>Champ de saisie de la date est obligatoire.</value>
+  </data>
+  <data name="Required_fecha_salida" xml:space="preserve">
+    <value>Champ de saisie de la date est obligatoire.</value>
+  </data>
+  <data name="Required_habitaciones" xml:space="preserve">
+    <value>Vous devez sélectionner au moins une pièce.</value>
+  </data>
+  <data name="Required_hora" xml:space="preserve">
+    <value>Le champ de temps est nécessaire.</value>
+  </data>
+  <data name="Required_mensaje_contactenos" xml:space="preserve">
+    <value>Le champ du message est obligatoire.</value>
+  </data>
+  <data name="Required_nombre_apellidos" xml:space="preserve">
+    <value>Le champ Nom complet est requis.</value>
+  </data>
+  <data name="Required_pais" xml:space="preserve">
+    <value>Le champ pays est obligatoire.</value>
+  </data>
+  <data name="Required_password" xml:space="preserve">
+    <value>Le mot de passe est nécessaire.</value>
+  </data>
+  <data name="Reservacion" xml:space="preserve">
+    <value>Réservation</value>
+  </data>
+  <data name="Reservacion_elimino" xml:space="preserve">
+    <value>La réservation a été retirée avec succès.</value>
+  </data>
+  <data name="Reservar" xml:space="preserve">
+    <value>Réserver</value>
+  </data>
+  <data name="Reserve" xml:space="preserve">
+    <value>Réserver actuellement</value>
+  </data>
+  <data name="Sabado" xml:space="preserve">
+    <value>Samedi</value>
+  </data>
+  <data name="Saludos" xml:space="preserve">
+    <value>Salutation</value>
+  </data>
+  <data name="Satisface_recibirlo" xml:space="preserve">
+    <value>nos satisface poder recibirlo en nuestra casa desde el</value>
+  </data>
+  <data name="Segunda_parte" xml:space="preserve">
+    <value>La cuisine est un art qui a développé délicatement pour obtenir la satisfaction totale des convives des plus exigeants, leur plaisir est notre primauté.</value>
+  </data>
+  <data name="Septiembre" xml:space="preserve">
+    <value>Septembre</value>
+  </data>
+  <data name="Servicios" xml:space="preserve">
+    <value>Services</value>
+  </data>
+  <data name="Servicios_hostal" xml:space="preserve">
+    <value>Nos services</value>
+  </data>
+  <data name="Servicio_gastronomia" xml:space="preserve">
+    <value>Restauration: petit-déjeuner, déjeuner, dîner.</value>
+  </data>
+  <data name="Siguiente" xml:space="preserve">
+    <value>Suivant</value>
+  </data>
+  <data name="Solicitud_reservacion" xml:space="preserve">
+    <value>Demande de réservation</value>
+  </data>
+  <data name="Subir_imagenes" xml:space="preserve">
+    <value>Télécharger des images</value>
+  </data>
+  <data name="Tamanno_maximo" xml:space="preserve">
+    <value>Taille maximale autorisée</value>
+  </data>
+  <data name="Telefono" xml:space="preserve">
+    <value>Téléphone</value>
+  </data>
+  <data name="Titulo" xml:space="preserve">
+    <value>Emelina - Le restaurant &amp; Maison à louer</value>
+  </data>
+  <data name="Titulo_publicidad1" xml:space="preserve">
+    <value>Le restaurant</value>
+  </data>
+  <data name="Titulo_publicidad2" xml:space="preserve">
+    <value>Grands chefs</value>
+  </data>
+  <data name="Titulo_publicidad2_hostal" xml:space="preserve">
+    <value>Excellence et de bon goût</value>
+  </data>
+  <data name="Titulo_publicidad3" xml:space="preserve">
+    <value>Menu complet</value>
+  </data>
+  <data name="Titulo_publicidad3_hostal" xml:space="preserve">
+    <value>Satisfaction et bien-être</value>
+  </data>
+  <data name="Todo_menu" xml:space="preserve">
+    <value>Voir le menu complet</value>
+  </data>
+  <data name="Ubicacion" xml:space="preserve">
+    <value>Emplacement</value>
+  </data>
+  <data name="Ver_galeria" xml:space="preserve">
+    <value>Voir la galerie</value>
+  </data>
+  <data name="Viernes" xml:space="preserve">
+    <value>Vendredi</value>
+  </data>
+</root>

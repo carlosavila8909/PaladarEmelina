@@ -1,0 +1,46 @@
+﻿@{
+    List<string> arr_imagenes = Utiles.Obtener_Dir_Imagenes("~/Content/Galeria");
+}
+
+<div class="container-fluid gallery no-padd">
+    @{
+        if (arr_imagenes.Count > 0)
+        {
+            for (int i = 0; i < arr_imagenes.Count; i += 4)
+            {
+                <div class="row no-margin">
+                    @{
+                        for (int j = 0; j < 4; j++)
+                        {
+                            if (i + j < arr_imagenes.Count)
+                            {
+                                string dir_imagen = Url.Content(String.Format("~/Content/Galeria/{0}", arr_imagenes[i + j]));
+                                <div class="col-sm-6 col-md-3">
+                                    <div class="space-30"></div>
+                                    <div class="input-group">
+                                        <div class="icheck-inline">
+                                            <label>
+                                                <input type="checkbox" class="icheck" data-checkbox="icheckbox_square-red" data-dir="@arr_imagenes[i + j]" id="@arr_imagenes[i + j].Replace(' ', '_')">
+                                            </label>
+                                        </div>
+                                    </div>
+
+                                    <a class="gallery-box" href="@dir_imagen" data-lightbox="gallery">
+                                        <img src="@dir_imagen" alt="" class="img-responsive">
+                                        <div class="gallery-overlay">
+                                            <span class="ion-ios-plus-empty"></span>
+                                        </div>
+                                    </a>
+                                </div>
+                                }
+                            }
+                    }
+                </div>
+            }
+        }
+        else
+        {
+            <div class="alert alert-danger text-center fade in"><button type="button" class="close" data-dismiss="alert" aria-hidden="true"></button>Lo sentimos! No existen imágenes en la Galería.</div>
+        }
+    }
+</div>

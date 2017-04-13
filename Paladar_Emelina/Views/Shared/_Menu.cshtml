@@ -1,0 +1,88 @@
+﻿<style>
+    .textmay{text-transform:uppercase !important;}
+</style>
+<header class="header header-top-transparent">
+    <div class="top-bar">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6">
+                    <ul class="list-inline">
+                        <li><a href="#datos_contacto"><i class="ion-ios-telephone"></i> +53 52461807</a></li>
+                        <li><a href="@Url.Action("Ubicacion", "Paladar")"><i class="ion-location"></i> @Resources.PaladarHostal.Direccion_negocio</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="sticky-wrapper" class="sticky-wrapper" style="height:64px;">
+        <nav class="navbar navbar-default navbar-static-top sticky-header" style="height:64px !important;">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="@Url.Action("Mostrar", "Paladar")">
+                        @{
+                            if (UICulture == "en")
+                            {
+                                <img src="@Url.Content("~/Content/logo-light_en.png")" alt="logo" class="logo-default" style="max-height:50px !important;height:50px !important;">
+                                <img src="@Url.Content("~/Content/logo-dark_en.png")" alt="logo" class="logo-scroll" style="max-height:45px !important;height:45px !important;margin-top:-7px !important;">
+                            }
+                            else
+                            {
+                                <img src="@Url.Content("~/Content/logo-light_es.png")" alt="logo" class="logo-default" style="max-height:50px !important;height:50px !important;">
+                                <img src="@Url.Content("~/Content/logo-dark_es.png")" alt="logo" class="logo-scroll" style="max-height:45px !important;height:45px !important;margin-top:-7px !important;">
+                            }
+                        }
+                    </a>
+                </div>
+                <div id="navbar" class="navbar-collapse collapse" style="max-height: 871px;">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="dropdown active">
+                            @Html.ActionLink(Resources.PaladarHostal.Principal, "Mostrar", "Paladar")
+                        </li>
+
+                        <li class="dropdown">
+                            @Html.ActionLink(Resources.PaladarHostal.Menu, "Menu", "Paladar")
+                        </li>
+
+                        <li class="dropdown">
+                            @Html.ActionLink(Resources.PaladarHostal.Galeria, "Galeria", "Paladar")
+                        </li>
+
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle js-activated" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">@Resources.PaladarHostal.Informacion <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li>@Html.ActionLink(Resources.PaladarHostal.Negocio, "Negocio", "Paladar", null, new { @class = "textmay" })</li>
+                                <li>@Html.ActionLink(Resources.PaladarHostal.Chefs, "Chefs", "Paladar", null, new { @class = "textmay" })</li>
+                                <li><a href="#datos_contacto" class="textmay">@Resources.PaladarHostal.Horario_Datos</a></li>
+                                <li>@Html.ActionLink(Resources.PaladarHostal.Contactenos, "Contactenos", "Paladar", null, new { @class = "textmay" })</li>
+                                <li>@Html.ActionLink(Resources.PaladarHostal.Comentarios, "Comentario", "Paladar", null, new { @class = "textmay" })</li>
+                                <li>@Html.ActionLink(Resources.PaladarHostal.Ubicacion, "Ubicacion", "Paladar", null, new { @class = "textmay" })</li>
+                                <li class="dropdown-submenu">
+                                    <a tabindex="-1" href="javascript:;" class="textmay">@Resources.PaladarHostal.Idioma</a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="javascript:;" class="textmay" onclick="set_idioma('es', '@Url.Action("Set_Idioma", "Paladar")')"><img class="flag" src="@Url.Content("~/Content/spanish.png")"> @Resources.PaladarHostal.Espanol</a></li>
+                                        <li><a href="javascript:;" class="textmay" onclick="set_idioma('en', '@Url.Action("Set_Idioma", "Paladar")')"><span><img class="flag" src="@Url.Content("~/Content/usa-flag.png")"> @Resources.PaladarHostal.Ingles</span></a></li>
+                                        <li><a href="javascript:;" class="textmay" onclick="set_idioma('fr', '@Url.Action("Set_Idioma", "Paladar")')"><span><img class="flag" src="@Url.Content("~/Content/fr.png")"> @Resources.PaladarHostal.Frances</span></a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle js-activated" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">@Resources.PaladarHostal.Servicios <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li>@Html.ActionLink(Resources.PaladarHostal.Reservacion, "Reservacion", "Paladar", null, new { @class = "textmay" })</li>
+                                <li>@Html.ActionLink(Resources.PaladarHostal.Hostal, "Mostrar", "Hostal", null, new { @class = "textmay" })</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+</header>

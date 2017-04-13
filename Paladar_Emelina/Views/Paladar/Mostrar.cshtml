@@ -1,0 +1,317 @@
+﻿@model Config_Horarios
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>@Resources.PaladarHostal.Titulo</title>
+    @Styles.Render("~/Content/css_global")
+    @Styles.Render("~/Content/css_presentacion")
+</head>
+<body>
+    @Html.Partial("~/Views/Shared/_Menu.cshtml")
+    <div class="rev_slider_wrapper">
+        <div id="slider1" class="rev_slider fullwidthabanner" data-version="5.0">
+            <ul>
+                <li data-transition="random">
+                    <img src="@Url.Content("~/Content/bg1.jpg")" alt="" width="1920" height="1000" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="10" class="rev-slidebg">
+                    <div class="tp-caption tp-resizeme slider-title" style="border:transparent !important;"
+                         data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
+                         data-y="['middle','middle','middle','middle']" data-voffset="['0','0','0','0']"
+                         data-fontsize="['120','120','120','120']"
+                         data-lineheight="['150','150','150','150']"
+                         data-width="none"
+                         data-height="none"
+                         data-transform_idle="o:1;"
+                         data-transform_in="opacity:0;s:1500;e:Power3.easeInOut;"
+                         data-transform_out="auto:auto;s:300;"
+                         data-start="500">@Resources.PaladarHostal.Titulo_publicidad1</div>
+                    <div class="tp-caption tp-resizeme slider-caption"
+                         data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
+                         data-y="['middle','middle','middle','middle']" data-voffset="['90','90','90','70']"
+                         data-fontsize="['40','40','40','40']"
+                         data-lineheight="['25','25','25','20']"
+                         data-width="none"
+                         data-height="none"
+                         data-whitespace="nowrap"
+                         data-transform_idle="o:1;"
+                         data-transform_in="opacity:0;s:1500;e:Power3.easeInOut;"
+                         data-transform_out="auto:auto;s:300;"
+                         data-start="1000">@Resources.PaladarHostal.Descripcion_publicidad1</div>
+                    <div class="tp-caption tp-resizeme slider-button"
+                         data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
+                         data-y="['middle','middle','middle','middle']" data-voffset="['160','160','160','120']"
+                         data-whitespace="nowrap"
+                         data-transform_idle="o:1;"
+                         data-transform_in="opacity:0;s:1500;e:Power3.easeInOut;"
+                         data-transform_out="auto:auto;s:300;"
+                         data-start="1500"></div>
+                </li>
+                <li data-transition="random">
+                    <img src="@Url.Content("~/Content/bg2.jpg")" alt="" width="1920" height="1000" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="10" class="rev-slidebg">
+                    <div class="tp-caption tp-resizeme slider-title" style="border:transparent !important;"
+                         data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
+                         data-y="['middle','middle','middle','middle']" data-voffset="['0','0','0','0']"
+                         data-fontsize="['120','120','120','120']"
+                         data-lineheight="['150','150','150','150']"
+                         data-width="none"
+                         data-height="none"
+                         data-transform_idle="o:1;"
+                         data-transform_in="opacity:0;s:1500;e:Power3.easeInOut;"
+                         data-transform_out="auto:auto;s:300;"
+                         data-start="500">@Resources.PaladarHostal.Titulo_publicidad2</div>
+                    <div class="tp-caption tp-resizeme slider-caption"
+                         data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
+                         data-y="['middle','middle','middle','middle']" data-voffset="['90','90','90','70']"
+                         data-fontsize="['40','40','40','40']"
+                         data-lineheight="['25','25','25','20']"
+                         data-width="none"
+                         data-height="none"
+                         data-whitespace="nowrap"
+                         data-transform_idle="o:1;"
+                         data-transform_in="opacity:0;s:1500;e:Power3.easeInOut;"
+                         data-transform_out="auto:auto;s:300;"
+                         data-start="1000">@Resources.PaladarHostal.Descripcion_publicidad2</div>
+                    <div class="tp-caption tp-resizeme slider-button"
+                         data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
+                         data-y="['middle','middle','middle','middle']" data-voffset="['160','160','160','120']"
+                         data-whitespace="nowrap"
+                         data-transform_idle="o:1;"
+                         data-transform_in="opacity:0;s:1500;e:Power3.easeInOut;"
+                         data-transform_out="auto:auto;s:300;"
+                         data-start="1500"></div>
+                </li>
+                <li data-transition="random">
+                    <img src="@Url.Content("~/Content/bg11.jpg")" alt="" width="1920" height="1000" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="10" class="rev-slidebg">
+                    <div class="tp-caption tp-resizeme slider-title" style="border:transparent !important;"
+                         data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
+                         data-y="['middle','middle','middle','middle']" data-voffset="['0','0','0','0']"
+                         data-fontsize="['120','120','120','120']"
+                         data-lineheight="['150','150','150','150']"
+                         data-width="none"
+                         data-height="none"
+                         data-transform_idle="o:1;"
+                         data-transform_in="opacity:0;s:1500;e:Power3.easeInOut;"
+                         data-transform_out="auto:auto;s:300;"
+                         data-start="500">@Resources.PaladarHostal.Titulo_publicidad3</div>
+                    <div class="tp-caption tp-resizeme slider-caption"
+                         data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
+                         data-y="['middle','middle','middle','middle']" data-voffset="['90','90','90','70']"
+                         data-fontsize="['40','40','40','40']"
+                         data-lineheight="['25','25','25','20']"
+                         data-width="none"
+                         data-height="none"
+                         data-whitespace="nowrap"
+                         data-transform_idle="o:1;"
+                         data-transform_in="opacity:0;s:1500;e:Power3.easeInOut;"
+                         data-transform_out="auto:auto;s:300;"
+                         data-start="1000">@Resources.PaladarHostal.Descripcion_publicidad3</div>
+                    <div class="tp-caption tp-resizeme slider-button"
+                         data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
+                         data-y="['middle','middle','middle','middle']" data-voffset="['160','160','160','120']"
+                         data-whitespace="nowrap"
+                         data-transform_idle="o:1;"
+                         data-transform_in="opacity:0;s:1500;e:Power3.easeInOut;"
+                         data-transform_out="auto:auto;s:300;"
+                         data-start="1500"></div>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="space-70"></div>
+    <div class="overflow-hidden">
+        <div class="container" id="historia">
+            <div class="row vertical-align-child">
+                <div class="col-md-6 text-center">
+                    <h1 class="title-1"><span class="text-color" style="text-transform:initial !important;">@Resources.PaladarHostal.Bienvenido</span></h1>
+                    <h5 class="subtitle">@Resources.PaladarHostal.Negocio</h5>
+                    <div class="space-30"></div>
+                    <p>
+                        @Resources.PaladarHostal.Primera_parte
+                    </p>
+                    <blockquote>
+                        @Resources.PaladarHostal.Segunda_parte
+                    </blockquote>
+                    <div class="space-30"></div>
+                </div>
+                <div class="col-md-6">
+                    <img src="@Url.Content("~/Content/combine1.png")" alt="" class="img-responsive">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="space-70"></div>
+    <div class="cta-background parallax-background" data-stellar-background-ratio="0.3" style="background-position: 50% 50%;">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-8 col-sm-offset-4 text-left">
+                    <p class="lead ">
+                        "@Resources.PaladarHostal.Frase"
+                    </p>
+                    <span class="lead">Rolf Baumann</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="space-70"></div>
+    <div class="container" id="platillos">
+        <div class="text-center">
+            <h1 class="title-1"><span class="text-color" style="text-transform:initial !important;">@Resources.PaladarHostal.Menu</span></h1>
+            <h5 class="subtitle">@Resources.PaladarHostal.Cortesia_casa</h5>
+            <div class="space-30"></div>
+        </div>
+
+        <div class="row vertical-align-child">
+            <div class="col-md-8">
+                <div>
+                    <ul class="list-inline menu-tabs margin-b-30" role="tablist">
+                        @{
+                            DirectoryInfo[] carpetas = new DirectoryInfo(Server.MapPath("~/Content/Menu")).GetDirectories();
+                            for (int i = 0; i < carpetas.Length; i++)
+                            {
+                                <li role="presentation" class="@String.Format("{0}", i == 0 ? "active" : "")"><a href="@String.Format("#{0}", i + 1)" aria-controls="drink" role="tab" data-toggle="tab">@Resources.Dinamicos.ResourceManager.GetString(carpetas[i].ToString())</a></li>
+                            }
+                        }
+                    </ul>
+                    <div class="tab-content">
+                        @{
+                            for (int i = 0; i < carpetas.Length; i++)
+                            {
+                                DirectoryInfo[] menus = carpetas[i].GetDirectories();
+                                var pos = i + 1;
+                                <div role="tabpanel" class="@String.Format("tab-pane {0}", i == 0 ? "active" : "")" id="@pos">
+                                    <ul class="list-unstyled">
+                                        @{
+                                            for (int j = 0; j < menus.Length; j++)
+                                            {
+                                                Datos_Menu datos_menu = Utiles.Obtener_Datos_XML(Server.MapPath(String.Format("~/Content/Menu/{0}/{1}/datos.xml", carpetas[i].Name, menus[j].Name)));
+                                                <li class="menu-box clearfix margin-b-20">
+                                                <div class="thumb">
+                                                    <img src="@Url.Content(String.Format("~/Content/Menu/{0}/{1}/img.jpg", carpetas[i].Name, menus[j].Name))" width="70" class="img-responsive" alt="">
+                                                </div>
+                                                    <div class="menu-content">
+                                                        <h4>
+                                                            <a href="@Url.Action("Plato", "Paladar", new { id = menus[j].Name })" style="font-weight:bold;">@Resources.Dinamicos.ResourceManager.GetString(datos_menu.nombre_plato)</a>
+                                                            <span style="color:#c0996b;font-weight:600;">$@Utiles.Arreglar_Precio(datos_menu.precio)</span>
+                                                        </h4>
+                                                    </div>
+                                                </li>
+                                            }
+                                        }
+                                    </ul>
+                                </div>
+                            }
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="space-70"></div>
+    <div class="about-chefs" data-stellar-background-ratio="0.5" style="background-position: 0px 0px;">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2 text-center" style="padding-bottom:40px !important;padding-top:40px !important;">
+                    <h1 class="text-uppercase">@Resources.PaladarHostal.Galeria_imagenes</h1>
+                    <p>
+                        @Resources.PaladarHostal.Descripcion_galeria_imagenes
+                    </p>
+                    <a href="@Url.Action("Galeria", "Paladar")" class="btn btn-white btn-rounded">@Resources.PaladarHostal.Ver_galeria</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="space-10"></div>
+    <div class="container" id="div_chefs">
+        <div class="space-70"></div>
+        <div class="text-center">
+            <h1 class="title-1">@Resources.PaladarHostal.Nuestros <span class="text-color">Chefs</span></h1>
+            <h5 class="subtitle">@Resources.PaladarHostal.Conozca_equipo</h5>
+            <div class="space-30"></div>
+        </div>
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                @{
+                    DirectoryInfo[] carpetas_chefs = new DirectoryInfo(Server.MapPath("~/Content/Chefs")).GetDirectories();
+                    for (int i = 0; i < carpetas_chefs.Length; i++)
+                    {
+                        Datos_Chefs datos_chef = Utiles.Obtener_Datos_Chef(Server.MapPath(String.Format("~/Content/Chefs/{0}/datos.xml", carpetas_chefs[i].Name)));
+                        <div class="row">
+                            <div class="post">
+                                <div class="post-thumb">
+                                    <div class="col-md-4 gallery-slider clearfix">
+                                        <ul class="slides">
+                                            <li>
+                                                <img src="@Url.Content(String.Format("~/Content/Chefs/{0}/img.jpg", carpetas_chefs[i].Name))" alt="" class="img-responsive">
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="post-meta">
+                                    <h3 style="font:300 20px 'Open Sans', Arial, sans-serif;margin-bottom:0px;color:#5f6f7e;margin-left:15px;">@datos_chef.nombre_apellidos</h3>
+                                    <h4 style="font:400 16px 'Open Sans', Arial, sans-serif;color:#E54A1A;margin-top:10px;margin-left:15px;">@Resources.Dinamicos.ResourceManager.GetString(String.Format("Chef_{0}_cargo", carpetas_chefs[i].Name))</h4>
+                                </div>
+                                <div class="post-content" style="margin-left:15px;margin-right:15px;">
+                                    <p>
+                                        @Resources.Dinamicos.ResourceManager.GetString(String.Format("Chef_{0}_descripcion", carpetas_chefs[i].Name))
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="space-20"></div>
+                    }
+                }
+            </div>
+        </div>
+    </div>
+    <div class="space-50"></div>
+    <div class="cta-background-2">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6 col-sm-offset-3 text-center">
+                    <h1 class="text-uppercase">@Resources.PaladarHostal.Reserve</h1>
+                    <p>
+                        @Resources.PaladarHostal.Descripcion_Reservar
+                    </p>
+                    <a href="@Url.Action("Reservacion", "Paladar")" class="btn btn-white btn-rounded">@Resources.PaladarHostal.Reservar</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    @Html.Partial("~/Views/Shared/_Footer.cshtml", Model)
+    @Scripts.Render("~/Scripts/js_global")
+    @Scripts.Render("~/Scripts/js_slider")
+
+    <script>
+        jQuery(document).ready(function () {
+            jQuery("#slider1").revolution({
+                sliderType: "standard",
+                jsFileLocation: "../Scripts/",
+                sliderLayout: "fullscreen",
+                dottedOverlay: "none",
+                delay: 9000,
+                navigation: {
+                    arrows: {enable: true}
+                },
+                parallax: {
+                    type: "on",
+                    levels: [5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85],
+                    origo: "enterpoint",
+                    speed: 400,
+                    bgparallax: "on",
+                    disable_onmobile: "off"
+                },
+                gridwidth: 1170,
+                gridheight: 600
+            });
+        });
+    </script>
+</body>
+</html>

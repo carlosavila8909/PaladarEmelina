@@ -1,0 +1,51 @@
+﻿@{
+    ViewBag.Titulo_pagina = Resources.PaladarHostal.Chefs;
+}
+
+@section breadcrumb{
+    <span class="padd_breadcrumb">
+        <i class="ion-ios-arrow-forward padd_breadcrumb"></i>
+        @Resources.PaladarHostal.Chefs
+    </span>
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+            @{
+                DirectoryInfo[] carpetas_chefs = new DirectoryInfo(Server.MapPath("~/Content/Chefs")).GetDirectories();
+                for (int i = 0; i < carpetas_chefs.Length; i++)
+                {
+                    Datos_Chefs datos_chef = Utiles.Obtener_Datos_Chef(Server.MapPath(String.Format("~/Content/Chefs/{0}/datos.xml", carpetas_chefs[i].Name)));
+                    <div class="row">
+                        <div class="post">
+                            <div class="post-thumb">
+                                <div class="col-md-4 gallery-slider clearfix">
+                                    <ul class="slides">
+                                        <li>
+                                            <img src="@Url.Content(String.Format("~/Content/Chefs/{0}/img.jpg", carpetas_chefs[i].Name))" alt="" class="img-responsive">
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="post-meta">
+                                <h3 style="font:300 20px 'Open Sans', Arial, sans-serif;margin-bottom:0px;color:#5f6f7e;margin-left:15px;">@datos_chef.nombre_apellidos</h3>
+                                <h4 style="font:400 16px 'Open Sans', Arial, sans-serif;color:#E54A1A;margin-top:10px;margin-left:15px;">@Resources.Dinamicos.ResourceManager.GetString(String.Format("Chef_{0}_cargo", carpetas_chefs[i].Name))</h4>
+                            </div>
+                            <div class="post-content" style="margin-left:15px;margin-right:15px;">
+                                <p>
+                                    @Resources.Dinamicos.ResourceManager.GetString(String.Format("Chef_{0}_descripcion", carpetas_chefs[i].Name))
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    if (i != carpetas_chefs.Length - 1)
+                    {
+                        <div class="space-20"></div>
+                    }
+                }
+            }
+        </div>
+    </div>
+</div>

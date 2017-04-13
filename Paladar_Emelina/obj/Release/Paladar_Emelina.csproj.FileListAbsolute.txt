@@ -1,0 +1,96 @@
+C:\Users\Carlos Avila\Documents\Visual Studio 2015\Projects\Paladar_Emelina\Paladar_Emelina\bin\roslyn\csc.exe
+C:\Users\Carlos Avila\Documents\Visual Studio 2015\Projects\Paladar_Emelina\Paladar_Emelina\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\Carlos Avila\Documents\Visual Studio 2015\Projects\Paladar_Emelina\Paladar_Emelina\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\Carlos Avila\Documents\Visual Studio 2015\Projects\Paladar_Emelina\Paladar_Emelina\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\Carlos Avila\Documents\Visual Studio 2015\Projects\Paladar_Emelina\Paladar_Emelina\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\Carlos Avila\Documents\Visual Studio 2015\Projects\Paladar_Emelina\Paladar_Emelina\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\Carlos Avila\Documents\Visual Studio 2015\Projects\Paladar_Emelina\Paladar_Emelina\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\Carlos Avila\Documents\Visual Studio 2015\Projects\Paladar_Emelina\Paladar_Emelina\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\Carlos Avila\Documents\Visual Studio 2015\Projects\Paladar_Emelina\Paladar_Emelina\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\Carlos Avila\Documents\Visual Studio 2015\Projects\Paladar_Emelina\Paladar_Emelina\bin\roslyn\vbc.exe
+C:\Users\Carlos Avila\Documents\Visual Studio 2015\Projects\Paladar_Emelina\Paladar_Emelina\bin\roslyn\VBCSCompiler.exe
+C:\Users\Carlos Avila\Documents\Visual Studio 2015\Projects\Paladar_Emelina\Paladar_Emelina\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\Carlos Avila\Documents\Visual Studio 2015\Projects\Paladar_Emelina\Paladar_Emelina\bin\Paladar_Emelina.dll.config
+C:\Users\Carlos Avila\Documents\Visual Studio 2015\Projects\Paladar_Emelina\Paladar_Emelina\bin\Paladar_Emelina.dll
+C:\Users\Carlos Avila\Documents\Visual Studio 2015\Projects\Paladar_Emelina\Paladar_Emelina\bin\Paladar_Emelina.pdb
+C:\Users\Carlos Avila\Documents\Visual Studio 2015\Projects\Paladar_Emelina\Paladar_Emelina\bin\Antlr3.Runtime.dll
+C:\Users\Carlos Avila\Documents\Visual Studio 2015\Projects\Paladar_Emelina\Paladar_Emelina\bin\EntityFramework.dll
+C:\Users\Carlos Avila\Documents\Visual Studio 2015\Projects\Paladar_Emelina\Paladar_Emelina\bin\EntityFramework.SqlServer.dll
+C:\Users\Carlos Avila\Documents\Visual Studio 2015\Projects\Paladar_Emelina\Paladar_Emelina\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\Carlos Avila\Documents\Visual Studio 2015\Projects\Paladar_Emelina\Paladar_Emelina\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Carlos Avila\Documents\Visual Studio 2015\Projects\Paladar_Emelina\Paladar_Emelina\bin\Newtonsoft.Json.dll
+C:\Users\Carlos Avila\Documents\Visual Studio 2015\Projects\Paladar_Emelina\Paladar_Emelina\bin\System.Data.SQLite.dll
+C:\Users\Carlos Avila\Documents\Visual Studio 2015\Projects\Paladar_Emelina\Paladar_Emelina\bin\System.Data.SQLite.EF6.dll
+C:\Users\Carlos Avila\Documents\Visual Studio 2015\Projects\Paladar_Emelina\Paladar_Emelina\bin\System.Data.SQLite.Linq.dll
+C:\Users\Carlos Avila\Documents\Visual Studio 2015\Projects\Paladar_Emelina\Paladar_Emelina\bin\System.Web.Helpers.dll
+C:\Users\Carlos Avila\Documents\Visual Studio 2015\Projects\Paladar_Emelina\Paladar_Emelina\bin\System.Web.Mvc.dll
+C:\Users\Carlos Avila\Documents\Visual Studio 2015\Projects\Paladar_Emelina\Paladar_Emelina\bin\System.Web.Optimization.dll
+C:\Users\Carlos Avila\Documents\Visual Studio 2015\Projects\Paladar_Emelina\Paladar_Emelina\bin\System.Web.Razor.dll
+C:\Users\Carlos Avila\Documents\Visual Studio 2015\Projects\Paladar_Emelina\Paladar_Emelina\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Carlos Avila\Documents\Visual Studio 2015\Projects\Paladar_Emelina\Paladar_Emelina\bin\System.Web.WebPages.dll
+C:\Users\Carlos Avila\Documents\Visual Studio 2015\Projects\Paladar_Emelina\Paladar_Emelina\bin\System.Web.WebPages.Razor.dll
+C:\Users\Carlos Avila\Documents\Visual Studio 2015\Projects\Paladar_Emelina\Paladar_Emelina\bin\WebGrease.dll
+C:\Users\Carlos Avila\Documents\Visual Studio 2015\Projects\Paladar_Emelina\Paladar_Emelina\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\Carlos Avila\Documents\Visual Studio 2015\Projects\Paladar_Emelina\Paladar_Emelina\bin\System.Data.SQLite.xml
+C:\Users\Carlos Avila\Documents\Visual Studio 2015\Projects\Paladar_Emelina\Paladar_Emelina\bin\System.Web.Helpers.xml
+C:\Users\Carlos Avila\Documents\Visual Studio 2015\Projects\Paladar_Emelina\Paladar_Emelina\bin\System.Web.Mvc.xml
+C:\Users\Carlos Avila\Documents\Visual Studio 2015\Projects\Paladar_Emelina\Paladar_Emelina\bin\System.Web.Optimization.xml
+C:\Users\Carlos Avila\Documents\Visual Studio 2015\Projects\Paladar_Emelina\Paladar_Emelina\bin\System.Web.Razor.xml
+C:\Users\Carlos Avila\Documents\Visual Studio 2015\Projects\Paladar_Emelina\Paladar_Emelina\bin\System.Web.WebPages.xml
+C:\Users\Carlos Avila\Documents\Visual Studio 2015\Projects\Paladar_Emelina\Paladar_Emelina\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Carlos Avila\Documents\Visual Studio 2015\Projects\Paladar_Emelina\Paladar_Emelina\bin\System.Web.WebPages.Razor.xml
+C:\Users\Carlos Avila\Documents\Visual Studio 2015\Projects\Paladar_Emelina\Paladar_Emelina\bin\Antlr3.Runtime.pdb
+C:\Users\Carlos Avila\Documents\Visual Studio 2015\Projects\Paladar_Emelina\Paladar_Emelina\bin\Newtonsoft.Json.xml
+C:\Users\Carlos Avila\Documents\Visual Studio 2015\Projects\Paladar_Emelina\Paladar_Emelina\bin\EntityFramework.xml
+C:\Users\Carlos Avila\Documents\Visual Studio 2015\Projects\Paladar_Emelina\Paladar_Emelina\bin\EntityFramework.SqlServer.xml
+C:\Users\Carlos Avila\Documents\Visual Studio 2015\Projects\Paladar_Emelina\Paladar_Emelina\obj\Release\Paladar_Emelina.csprojResolveAssemblyReference.cache
+C:\Users\Carlos Avila\Documents\Visual Studio 2015\Projects\Paladar_Emelina\Paladar_Emelina\obj\Release\Paladar_Emelina.dll
+C:\Users\Carlos Avila\Documents\Visual Studio 2015\Projects\Paladar_Emelina\Paladar_Emelina\obj\Release\Paladar_Emelina.pdb
+C:\Users\carlos\Documents\Visual Studio 2015\Projects\Paladar_Emelina\Paladar_Emelina\bin\roslyn\csc.exe
+C:\Users\carlos\Documents\Visual Studio 2015\Projects\Paladar_Emelina\Paladar_Emelina\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\carlos\Documents\Visual Studio 2015\Projects\Paladar_Emelina\Paladar_Emelina\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\carlos\Documents\Visual Studio 2015\Projects\Paladar_Emelina\Paladar_Emelina\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\carlos\Documents\Visual Studio 2015\Projects\Paladar_Emelina\Paladar_Emelina\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\carlos\Documents\Visual Studio 2015\Projects\Paladar_Emelina\Paladar_Emelina\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\carlos\Documents\Visual Studio 2015\Projects\Paladar_Emelina\Paladar_Emelina\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\carlos\Documents\Visual Studio 2015\Projects\Paladar_Emelina\Paladar_Emelina\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\carlos\Documents\Visual Studio 2015\Projects\Paladar_Emelina\Paladar_Emelina\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\carlos\Documents\Visual Studio 2015\Projects\Paladar_Emelina\Paladar_Emelina\bin\roslyn\vbc.exe
+C:\Users\carlos\Documents\Visual Studio 2015\Projects\Paladar_Emelina\Paladar_Emelina\bin\roslyn\VBCSCompiler.exe
+C:\Users\carlos\Documents\Visual Studio 2015\Projects\Paladar_Emelina\Paladar_Emelina\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\carlos\Documents\Visual Studio 2015\Projects\Paladar_Emelina\Paladar_Emelina\bin\Paladar_Emelina.dll.config
+C:\Users\carlos\Documents\Visual Studio 2015\Projects\Paladar_Emelina\Paladar_Emelina\bin\Paladar_Emelina.dll
+C:\Users\carlos\Documents\Visual Studio 2015\Projects\Paladar_Emelina\Paladar_Emelina\bin\Paladar_Emelina.pdb
+C:\Users\carlos\Documents\Visual Studio 2015\Projects\Paladar_Emelina\Paladar_Emelina\bin\Antlr3.Runtime.dll
+C:\Users\carlos\Documents\Visual Studio 2015\Projects\Paladar_Emelina\Paladar_Emelina\bin\EntityFramework.dll
+C:\Users\carlos\Documents\Visual Studio 2015\Projects\Paladar_Emelina\Paladar_Emelina\bin\EntityFramework.SqlServer.dll
+C:\Users\carlos\Documents\Visual Studio 2015\Projects\Paladar_Emelina\Paladar_Emelina\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\carlos\Documents\Visual Studio 2015\Projects\Paladar_Emelina\Paladar_Emelina\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\carlos\Documents\Visual Studio 2015\Projects\Paladar_Emelina\Paladar_Emelina\bin\Newtonsoft.Json.dll
+C:\Users\carlos\Documents\Visual Studio 2015\Projects\Paladar_Emelina\Paladar_Emelina\bin\System.Data.SQLite.dll
+C:\Users\carlos\Documents\Visual Studio 2015\Projects\Paladar_Emelina\Paladar_Emelina\bin\System.Data.SQLite.EF6.dll
+C:\Users\carlos\Documents\Visual Studio 2015\Projects\Paladar_Emelina\Paladar_Emelina\bin\System.Data.SQLite.Linq.dll
+C:\Users\carlos\Documents\Visual Studio 2015\Projects\Paladar_Emelina\Paladar_Emelina\bin\System.Web.Helpers.dll
+C:\Users\carlos\Documents\Visual Studio 2015\Projects\Paladar_Emelina\Paladar_Emelina\bin\System.Web.Mvc.dll
+C:\Users\carlos\Documents\Visual Studio 2015\Projects\Paladar_Emelina\Paladar_Emelina\bin\System.Web.Optimization.dll
+C:\Users\carlos\Documents\Visual Studio 2015\Projects\Paladar_Emelina\Paladar_Emelina\bin\System.Web.Razor.dll
+C:\Users\carlos\Documents\Visual Studio 2015\Projects\Paladar_Emelina\Paladar_Emelina\bin\System.Web.WebPages.Deployment.dll
+C:\Users\carlos\Documents\Visual Studio 2015\Projects\Paladar_Emelina\Paladar_Emelina\bin\System.Web.WebPages.dll
+C:\Users\carlos\Documents\Visual Studio 2015\Projects\Paladar_Emelina\Paladar_Emelina\bin\System.Web.WebPages.Razor.dll
+C:\Users\carlos\Documents\Visual Studio 2015\Projects\Paladar_Emelina\Paladar_Emelina\bin\WebGrease.dll
+C:\Users\carlos\Documents\Visual Studio 2015\Projects\Paladar_Emelina\Paladar_Emelina\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\carlos\Documents\Visual Studio 2015\Projects\Paladar_Emelina\Paladar_Emelina\bin\System.Data.SQLite.xml
+C:\Users\carlos\Documents\Visual Studio 2015\Projects\Paladar_Emelina\Paladar_Emelina\bin\System.Web.Helpers.xml
+C:\Users\carlos\Documents\Visual Studio 2015\Projects\Paladar_Emelina\Paladar_Emelina\bin\System.Web.Mvc.xml
+C:\Users\carlos\Documents\Visual Studio 2015\Projects\Paladar_Emelina\Paladar_Emelina\bin\System.Web.Optimization.xml
+C:\Users\carlos\Documents\Visual Studio 2015\Projects\Paladar_Emelina\Paladar_Emelina\bin\System.Web.Razor.xml
+C:\Users\carlos\Documents\Visual Studio 2015\Projects\Paladar_Emelina\Paladar_Emelina\bin\System.Web.WebPages.xml
+C:\Users\carlos\Documents\Visual Studio 2015\Projects\Paladar_Emelina\Paladar_Emelina\bin\System.Web.WebPages.Deployment.xml
+C:\Users\carlos\Documents\Visual Studio 2015\Projects\Paladar_Emelina\Paladar_Emelina\bin\System.Web.WebPages.Razor.xml
+C:\Users\carlos\Documents\Visual Studio 2015\Projects\Paladar_Emelina\Paladar_Emelina\bin\Antlr3.Runtime.pdb
+C:\Users\carlos\Documents\Visual Studio 2015\Projects\Paladar_Emelina\Paladar_Emelina\bin\Newtonsoft.Json.xml
+C:\Users\carlos\Documents\Visual Studio 2015\Projects\Paladar_Emelina\Paladar_Emelina\bin\EntityFramework.xml
+C:\Users\carlos\Documents\Visual Studio 2015\Projects\Paladar_Emelina\Paladar_Emelina\bin\EntityFramework.SqlServer.xml
+C:\Users\carlos\Documents\Visual Studio 2015\Projects\Paladar_Emelina\Paladar_Emelina\obj\Release\Paladar_Emelina.csprojResolveAssemblyReference.cache
+C:\Users\carlos\Documents\Visual Studio 2015\Projects\Paladar_Emelina\Paladar_Emelina\obj\Release\Paladar_Emelina.dll
+C:\Users\carlos\Documents\Visual Studio 2015\Projects\Paladar_Emelina\Paladar_Emelina\obj\Release\Paladar_Emelina.pdb

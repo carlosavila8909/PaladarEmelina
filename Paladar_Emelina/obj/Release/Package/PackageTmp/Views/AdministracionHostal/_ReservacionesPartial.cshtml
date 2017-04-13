@@ -1,0 +1,44 @@
+﻿@model List<Reservacion_Hostal>
+<div class="table-scrollable">
+    <table class="table table-hover" style="font-size:15px !important;">
+        <thead>
+            <tr>
+                <th>Nombre y Apellidos</th>
+                <th>Correo electrónico</th>
+                <th>Habitaciones</th>
+                <th>Fecha entrada</th>
+                <th>Fecha salida</th>
+                <th>Acompañantes</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @{
+                if (Model.Count > 0)
+                {
+                    foreach (var item in Model)
+                    {
+                        var fecha_ent = Utiles.Arreglar_Ceros_Fecha(item.dia_entrada, item.mes_entrada, item.anno_entrada);
+                        var fecha_sal = Utiles.Arreglar_Ceros_Fecha(item.dia_salida, item.mes_salida, item.anno_salida);
+
+                        <tr>
+                            <td>@item.nombre_apellidos</td>
+                            <td>@item.email</td>
+                            <td>@Utiles.Obtener_Habitaciones(item.habitaciones)</td>
+                            <td>@fecha_ent</td>
+                            <td>@fecha_sal</td>
+                            <td>@item.cant_acompannantes</td>
+                            <td>@Html.ActionLink("Eliminar", "", null, new { id = item.id_reservacion }, new { @class = "label label-sm label-danger label-mini", data_toggle = "modal", href = "#static", data_container = "body", onclick = String.Format("eliminar({0},'{1}','{2}','{3}','{4}');", item.id_reservacion, item.nombre_apellidos, item.email, fecha_ent, fecha_sal) })</td>
+                        </tr>
+                    }
+                }
+                else
+                {
+                    <tr>
+                        <td colspan="7" style="text-align:center !important;">No se encontraron reservaciones.</td>
+                    </tr>
+                }
+            }
+        </tbody>
+    </table>
+</div>

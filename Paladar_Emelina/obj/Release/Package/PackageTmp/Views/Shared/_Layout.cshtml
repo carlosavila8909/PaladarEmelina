@@ -1,0 +1,51 @@
+﻿@{ 
+    Config_Horarios modelo_general = Utiles.Obtener_Config_Horarios(new PaladarEntities());
+}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>@Resources.PaladarHostal.Titulo</title>
+    @Styles.Render("~/Content/css_global")
+    @RenderSection("CSS", required: false)
+</head>
+<body>
+    <style>
+        .validation-summary-errors {text-align:left;padding:15px 15px 5px 15px;background-color:#F3565D;border-color:#f13e64;color:white;margin-bottom:20px;box-shadow:0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.18);border-radius:2px;border-width:0; }
+        .padd_breadcrumb {padding-left:3px;padding-right:3px;}
+        .color_breadcrumb {color:#c0996b !important;}
+    </style>
+
+    @Html.Partial("~/Views/Shared/_Menu.cshtml")
+
+    <div class="page-breadcrumb" data-stellar-background-ratio="0.5" style="background-position: 0px 0px;">
+        <div class="container text-center">
+            <h1 style="font-size:49px !important;display:inline;border:1px solid white;padding-left:10px;padding-right:10px;">@Resources.PaladarHostal.Titulo_publicidad1</h1>
+            <h3 style="color:white;font-family:'Poppins', sans-serif;margin-top:15px;font-weight:400;">@Resources.PaladarHostal.Descripcion_publicidad1</h3>
+        </div>
+    </div>
+    <div class="space-20"></div>
+    <div class="text-center">
+        <i class="ion-android-home"></i>
+        @Html.ActionLink(Resources.PaladarHostal.Principal, "Mostrar", "Paladar", null, new { @class = "color_breadcrumb" })
+        @RenderSection("breadcrumb", required: false)
+    </div>
+    
+    <div class="space-20"></div>
+    <div class="text-center">
+        <h1>@ViewBag.Titulo_pagina</h1>
+    </div>
+
+    <div class="container text-center" id="div_container_body">
+        @RenderBody()
+    </div>
+
+    <div class="space-50"></div>
+    @Html.Partial("~/Views/Shared/_Footer.cshtml", modelo_general)
+    @Scripts.Render("~/Scripts/js_global")
+    @Scripts.Render("~/Scripts/js_slider")
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

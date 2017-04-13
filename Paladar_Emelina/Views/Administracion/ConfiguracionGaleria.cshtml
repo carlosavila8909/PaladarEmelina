@@ -1,0 +1,188 @@
+﻿@section breadcrumb{
+    <span class="padd_breadcrumb">
+        <i class="ion-ios-arrow-forward padd_breadcrumb"></i>
+        @Html.ActionLink("Administración", "Configuracion", "Administracion", null, new { @class = "color_breadcrumb" })
+    </span>
+
+    <span class="padd_breadcrumb">
+        <i class="ion-ios-arrow-forward padd_breadcrumb"></i>
+        Galería
+    </span>
+}
+
+@section CSS{
+    <link href="@Url.Content("~/Content/font-awesome/css/font-awesome.min.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/Content/simple-line-icons/simple-line-icons.min.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/Content/dropzone/css/dropzone.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/Content/lightbox.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/Content/icheck/skins/all.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/Content/Site.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/Content/components-md.css")" rel="stylesheet" />
+}
+
+<div class="overflow-hidden">
+    <div class="container">
+        @Html.Hidden("titulo_subir", Resources.PaladarHostal.Subir_imagenes)
+        @Html.Hidden("tamanno_maximo", Resources.PaladarHostal.Tamanno_maximo)
+        @Html.Hidden("click_arrastrar", Resources.PaladarHostal.Click_arrastrar)
+        @Html.Hidden("imagen_gal", Resources.PaladarHostal.Imagen)
+
+        <div class="row">
+            <div class="alert alert-danger hide" id="alert_error" style="text-align:center;">
+                Tiene que seleccionar al menos una imagen.
+            </div>
+
+            <div class="btn-group" id="btn_acciones">
+                <a class="btn btn-circle btn-default btn-sm" href="javascript:;" data-toggle="dropdown">
+                    <i class="ion-image"></i> Imagen <i class="fa fa-angle-down"></i>
+                </a>
+                <ul class="dropdown-menu" role="menu">
+                    <li>
+                        <a href="javascript:;" onclick="EliminarImagen();">Eliminar imagen</a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" onclick="SubirImagen();">Subir imagen</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6 hide" id="div_form_subir_img">
+                <div class="space-30"></div>
+                @using (Html.BeginForm("UploadFileGaleria", "Administracion", FormMethod.Post, new { @class = "dropzone", id = "dropzoneForm", enctype = "multipart/form-data" }))
+                {
+                    <a href="javascript:;" class="btn btn-icon-only btn-circle default" style="float:right;" onclick="Cancelar();">
+                        <i class="fa fa-times"></i>
+                    </a>
+                }
+            </div>
+            <div id="div_form_seleccionar_img">
+                <div id="div_imagenes">
+                    @Html.Partial("_ImagenesGaleriaPartial")
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts{
+    <script src="@Url.Content("~/Content/dropzone/dropzone.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/lightbox.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Content/icheck/icheck.min.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/form-icheck.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/metronic.js")" type="text/javascript"></script>
+
+    <script type="text/javascript">
+        var arr_img = new Array();
+
+        Dropzone.options.dropzoneForm = {
+            acceptedFiles: "image/*",
+            init: function () {
+                this.on("success", function (file) {
+                    var removeButton = Dropzone.createElement("<button class='btn btn-icon-only red' style='margin-top:10px;float:right;' title='Eliminar imagen'><i class='fa fa-times'></i></button>");
+                    var _this = this;
+                    Actualizar_Galeria();
+
+                    removeButton.addEventListener("click", function (e) {
+                        e.preventDefault();
+                        e.stopPropagation();
+
+                        $.ajax({
+                            url: "@Url.Action("EliminarImagenGaleria", "Administracion")",
+                            method: "POST",
+                            data: { dir_imagen: file.name },
+                            success: function (data) {
+                                if (data == "OK")
+                                {
+                                    _this.removeFile(file);
+                                    Actualizar_Galeria();
+                                }
+                                else
+                                    file.previewTemplate.lastElementChild.firstChild.innerHTML = "Ocurrió un error al intentar eliminar la imagen.";
+                            },
+                            error: function () {
+                                file.previewTemplate.lastElementChild.firstChild.innerHTML = "Ocurrió un error al intentar eliminar la imagen.";
+                            }
+                        });
+                    });
+
+                    file.previewElement.appendChild(removeButton);
+                });
+
+                this.on("error", function (file, errorMessage, xhr) {
+                    file.previewTemplate.lastElementChild.firstChild.innerHTML = "La imagen excede los 10MB";
+                    });
+                }
+            };
+
+        jQuery(document).ready(function () {
+            Metronic.init();
+            FormiCheck.init();
+            Eventos();
+        });
+
+        function Eventos()
+        {
+            $('.icheck-inline').on('ifChecked', function (event) {
+                arr_img.push(event.target.dataset.dir);
+            });
+
+            $('.icheck-inline').on('ifUnchecked', function (event) {
+                for (var i = 0; i < arr_img.length; i++) {
+                    if (arr_img[i] == event.target.dataset.dir) {
+                        arr_img.splice(i, 1);
+                        break;
+                    }
+                }
+            });
+        }
+
+        function SubirImagen() {
+            $("#div_form_seleccionar_img").addClass("col-md-6");
+            $("#div_form_subir_img").removeClass("hide");
+        }
+
+        function Cancelar() {
+            $("#div_form_subir_img").addClass("hide");
+            $("#div_form_seleccionar_img").removeClass("col-md-6");
+        }
+
+        function Actualizar_Galeria()
+        {
+            $.ajax({
+                url: "@Url.Action("ImagenesGaleria_Result")",
+                method: "POST",
+                success: function (data)
+                {
+                    $("#div_imagenes").html(data);
+                    Metronic.init();
+                    FormiCheck.init();
+                    Eventos();
+                }
+            });
+        }
+
+        function EliminarImagen()
+        {
+            if (arr_img.length > 0) {
+                $.ajax({
+                    url: "@Url.Action("EliminarImagenesGaleria")",
+                    data: { arr_img: arr_img },
+                    method: "POST",
+                    success: function (data)
+                    {
+                        arr_img.splice(0, arr_img.length);
+                        Actualizar_Galeria();
+                    }
+                });
+            }
+            else {
+                $("#alert_error").removeClass("hide");
+                setTimeout(function () {
+                    $("#alert_error").addClass("hide");
+                }, 5000);
+            }
+        }
+</script>
+}

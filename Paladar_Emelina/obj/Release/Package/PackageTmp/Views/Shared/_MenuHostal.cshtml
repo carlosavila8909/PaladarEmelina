@@ -1,0 +1,135 @@
+﻿<section id="menu-19">
+    <nav class="navbar navbar-dropdown bg-color transparent navbar-fixed-top">
+        <div class="container">
+            <div class="mbr-table">
+                <div class="mbr-table-cell">
+                    <div class="navbar-brand" style="text-transform:uppercase;">
+                        @{
+                            if (UICulture == "en")
+                            {
+                                <a href="@Url.Action("Mostrar", "Hostal")" class="navbar-logo"><img src="@Url.Content("~/assets/images/logo_en.png")" alt="House for Rent"></a>
+                            }
+                            else
+                            {
+                                <a href="@Url.Action("Mostrar", "Hostal")" class="navbar-logo"><img src="@Url.Content("~/assets/images/logo_es.png")" alt="Hostal"></a>
+                            }
+                        }
+                    </div>
+                </div>
+                <div class="mbr-table-cell">
+                    <button class="navbar-toggler pull-xs-right hidden-md-up" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar">
+                        <div class="hamburger-icon"></div>
+                    </button>
+                    <ul class="nav-dropdown collapse pull-xs-right nav navbar-nav navbar-toggleable-sm textupper" id="exCollapsingNavbar">
+                        <li class="nav-item"><a class="nav-link link" href="@Url.Action("Mostrar", "Hostal")">@Resources.PaladarHostal.Principal</a></li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link link dropdown-toggle" data-toggle="dropdown-submenu" href="javascript:;">@Resources.PaladarHostal.Habitaciones</a>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="@Url.Action("Habitacion1", "Hostal")">@Resources.PaladarHostal.Habitacion_1</a>
+                                <a class="dropdown-item" href="@Url.Action("Habitacion2", "Hostal")">@Resources.PaladarHostal.Habitacion_2</a>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link link dropdown-toggle" data-toggle="dropdown-submenu" href="javascript:;">@Resources.PaladarHostal.Informacion</a>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="@Url.Action("Negocio", "Hostal")">@Resources.PaladarHostal.Negocio</a>
+                                <a class="dropdown-item" href="@Url.Action("Servicios", "Hostal")">@Resources.PaladarHostal.Servicios_hostal</a>
+                                <a class="dropdown-item" href="@Url.Action("Ubicacion", "Hostal")">@Resources.PaladarHostal.Ubicacion</a>
+                                <a class="dropdown-item" href="#contacts5-18">@Resources.PaladarHostal.Datos_contacto</a>
+                                <a class="dropdown-item" href="@Url.Action("Contactenos", "Hostal")">@Resources.PaladarHostal.Contactenos</a>
+                                <a class="dropdown-item" href="@Url.Action("Comentario", "Hostal")">@Resources.PaladarHostal.Comentarios</a>
+                                <div class="dropdown">
+                                    <a class="dropdown-item dropdown-toggle" data-toggle="dropdown-submenu" href="javascript:;">@Resources.PaladarHostal.Idioma</a>
+                                    <div class="dropdown-menu dropdown-submenu">
+                                        <a class="dropdown-item" href="javascript:;" onclick="set_idioma('es', '@Url.Action("Set_Idioma", "Paladar")')"><img class="flag" src="@Url.Content("~/Content/spanish.png")"> @Resources.PaladarHostal.Espanol</a>
+                                        <a class="dropdown-item" href="javascript:;" onclick="set_idioma('en', '@Url.Action("Set_Idioma", "Paladar")')"><img class="flag" src="@Url.Content("~/Content/usa-flag.png")"> @Resources.PaladarHostal.Ingles</a>
+                                        <a class="dropdown-item" href="javascript:;" onclick="set_idioma('fr', '@Url.Action("Set_Idioma", "Paladar")')"><img class="flag" src="@Url.Content("~/Content/fr.png")"> @Resources.PaladarHostal.Frances</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link link dropdown-toggle" data-toggle="dropdown-submenu" href="javascript:;">@Resources.PaladarHostal.Servicios</a>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="@Url.Action("Reservacion", "Hostal")">@Resources.PaladarHostal.Reservacion</a>
+                                <a class="dropdown-item" href="@Url.Action("Mostrar", "Paladar")">@Resources.PaladarHostal.Paladar</a>
+                            </div>
+                        </li>
+                        <li class="nav-item"><a class="nav-link link" href="@Url.Action("Galeria", "Hostal")">@Resources.PaladarHostal.Galeria</a></li>
+                    </ul>
+                    <button hidden="" class="navbar-toggler navbar-close" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar">
+                        <div class="close-icon"></div>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+</section>
+<section class="engine"></section>
+<section class="mbr-slider mbr-section mbr-section__container carousel slide mbr-section-nopadding mbr-after-navbar" data-ride="carousel" data-keyboard="false" data-wrap="true" data-pause="false" data-interval="5000" id="slider-1b">
+    <div>
+        <div>
+            <div>
+                <ol class="carousel-indicators">
+                    <li data-app-prevent-settings="" data-target="#slider-1b" class="active" data-slide-to="0"></li>
+                    <li data-app-prevent-settings="" data-target="#slider-1b" data-slide-to="1"></li>
+                    <li data-app-prevent-settings="" data-target="#slider-1b" data-slide-to="2"></li>
+                </ol>
+                <div class="carousel-inner" role="listbox">
+                    <div class="mbr-section mbr-section-hero carousel-item dark center mbr-section-full active" data-bg-video-slide="false" style="background-image: url(@Url.Content("~/assets/images/4.jpg"));">
+                        <div class="mbr-table-cell">
+                            <div class="mbr-overlay"></div>
+                            <div class="container-slide container">
+
+                                <div class="row">
+                                    <div class="col-md-8 col-md-offset-3 text-xs-right">
+                                        <h2 class="mbr-section-title display-1">@Resources.PaladarHostal.Hostal</h2>
+                                        <p class="mbr-section-lead lead">@Resources.PaladarHostal.Descripcion_publicidad1_hostal</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mbr-section mbr-section-hero carousel-item dark center mbr-section-full" data-bg-video-slide="false" style="background-image: url(@Url.Content("~/assets/images/2.jpg"));">
+                        <div class="mbr-table-cell">
+                            <div class="mbr-overlay" style="background-color: rgb(0, 0, 0);"></div>
+                            <div class="container-slide container">
+
+                                <div class="row">
+                                    <div class="col-md-8 col-md-offset-2 text-xs-center">
+                                        <h2 class="mbr-section-title display-1">@Resources.PaladarHostal.Titulo_publicidad2_hostal</h2>
+                                        <p class="mbr-section-lead lead">@Resources.PaladarHostal.Descripcion_publicidad2_hostal</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mbr-section mbr-section-hero carousel-item dark center mbr-section-full" data-bg-video-slide="false" style="background-image: url(@Url.Content("~/assets/images/7.jpg"));">
+                        <div class="mbr-table-cell">
+                            <div class="mbr-overlay" style="background-color: rgb(0, 0, 0);"></div>
+                            <div class="container-slide container">
+
+                                <div class="row">
+                                    <div class="col-md-8 col-md-offset-2 text-xs-center">
+                                        <h2 class="mbr-section-title display-1">@Resources.PaladarHostal.Titulo_publicidad3_hostal</h2>
+                                        <p class="mbr-section-lead lead">@Resources.PaladarHostal.Descripcion_publicidad3_hostal</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <a data-app-prevent-settings="" class="left carousel-control" role="button" data-slide="prev" href="#slider-1b">
+                    <span class="icon-prev" aria-hidden="true"></span>
+                    <span class="sr-only">@Resources.PaladarHostal.Siguiente</span>
+                </a>
+                <a data-app-prevent-settings="" class="right carousel-control" role="button" data-slide="next" href="#slider-1b">
+                    <span class="icon-next" aria-hidden="true"></span>
+                    <span class="sr-only">@Resources.PaladarHostal.Anterior</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>

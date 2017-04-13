@@ -1,0 +1,67 @@
+﻿@model LoginModel
+@{
+    ViewBag.Titulo_pagina = "Acceder al sistema";
+    string ReturnUrl = ViewBag.ReturnUrl;
+    bool layout_hostal = false;
+    string controlador = "Paladar";
+
+    if (Request.Url.AbsoluteUri.Contains("AdministracionHostal") || ViewBag.Uricon != null)
+    {
+        Layout = "~/Views/Shared/_LayoutHostal.cshtml";
+        layout_hostal = true;
+        controlador = "Hostal";
+    }
+}
+
+@{
+    if (layout_hostal)
+    {
+        <div style="text-align:center;margin-top:20px;">
+            <i class="ion-ios-home color_icon"></i>
+            @Html.ActionLink(Resources.PaladarHostal.Principal, "Mostrar", "Hostal", null, new { @class = "color_breadcrumb" })
+            
+            <h1 style="margin-top:30px;font-weight:bold;">@ViewBag.Titulo_pagina</h1>
+        </div>
+    }
+}
+
+<div class="overflow-hidden">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3">
+                <div class="login-register-container" style="background:#f9f9f9;padding:50px;">
+                    @using (Html.BeginForm("Autenticacion", controlador, FormMethod.Post))
+                    {
+                        @Html.AntiForgeryToken()
+                        @Html.ValidationSummary()
+
+                        @Html.Hidden("ReturnUrl", ReturnUrl)
+                        <div class="form-group text-left">
+                            @Html.LabelFor(m => m.email, new { style = "font-size:14px !important;" })
+                            @Html.TextBoxFor(m => m.email, new { @class = "form-control" })
+                        </div>
+                        <div class="form-group text-left">
+                            @Html.LabelFor(m => m.password, new { style = "font-size:14px !important;" })
+                            @Html.PasswordFor(m => m.password, new { @class = "form-control" })
+                        </div>
+                        <div class="clearfix">
+                            <div class="pull-right text-right">
+                                <input type="submit" class="btn btn-primary btn-lg" value="Entrar">
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+    @{ 
+        if (layout_hostal)
+        {
+            <div style="height:50px;"></div>
+        }
+    }
+</div>
+
+@section Scripts{
+    @Scripts.Render("~/bundles/jqueryval")
+}

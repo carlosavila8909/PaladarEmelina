@@ -1,0 +1,73 @@
+﻿@{
+    ViewBag.Titulo_pagina = "Configuración";
+}
+
+@section breadcrumb{
+    <span class="padd_breadcrumb">
+        <i class="ion-ios-arrow-forward padd_breadcrumb"></i>
+        Administración
+    </span>
+}
+
+<style>
+    .tammano_letra {font-size:18px;}
+</style>
+
+<div class="space-20"></div>
+<div class="container">
+    <div class="row menu-filter-items">
+        <div class="col-sm-4 margin-b-30 menu-item">
+            <div class="menu-box clearfix ">
+                <div class="menu-content">
+                    <h4><a class="tammano_letra" href="@Url.Action("ConfiguracionReservacion")"><i class="ion-android-calendar"></i> Reservación</a></h4>
+                    <p>Gestione las reservaciones del negocio.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-4 margin-b-30 menu-item">
+            <div class="menu-box clearfix ">
+                <div class="menu-content">
+                    <h4><a class="tammano_letra" href="@Url.Action("ConfiguracionGaleria")"><i class="ion-image"></i> Galería</a></h4>
+                    <p>Actualize las imágenes de la galería.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-4 margin-b-30 menu-item">
+            <div class="menu-box clearfix ">
+                <div class="menu-content">
+                    <h4><a class="tammano_letra" href="@Url.Action("ConfiguracionHorario")"><i class="ion-android-restaurant"></i> Horario</a></h4>
+                    <p>Actualize el horario del negocio.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-4 margin-b-30 menu-item">
+            <div class="menu-box clearfix ">
+                <div class="menu-content">
+                    <h4><a class="tammano_letra" href="@Url.Action("ConfiguracionComentarios")"><i class="ion-ios-chatbubble"></i> Comentarios</a></h4>
+                    <p>Elimine cualquier comentario que no sea de su agrado.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-4 margin-b-30 menu-item">
+            <div class="menu-box clearfix ">
+                <div class="menu-content">
+                    <h4><a class="tammano_letra" href="@Url.Action("CambiarPassword", "Paladar")"><i class="ion-android-unlock"></i> Cambiar contraseña</a></h4>
+                    <p>Actualice su contraseña de administración.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-4 margin-b-30 menu-item">
+            <div class="menu-box clearfix ">
+                <div class="menu-content">
+                    <h4><a class="tammano_letra" href="@Url.Action("CerrarSesion", "Paladar")"><i class="ion-log-out"></i> Cerrar sesión</a></h4>
+                    <p>Finalice su sesión de administración.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

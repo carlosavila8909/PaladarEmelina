@@ -1,0 +1,119 @@
+﻿@model Config_Horarios
+@{
+    string email_administrador = Utiles.Obtener_Email_Negocio();
+ }
+<div class="cta-skin contact-info" id="datos_contacto">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-4 margin-b-30">
+                <i class="ion-email"></i>
+                <div class="overflow-hidden">
+                    <h4>@Resources.PaladarHostal.Correo</h4>
+                    <p class="lead">
+                        <a href="mailto:@email_administrador" style="color:white !important;">@email_administrador</a>
+                    </p>
+                </div>
+            </div>
+            <div class="col-sm-4 margin-b-30">
+                <i class="ion-android-call"></i>
+                <div class="overflow-hidden">
+                    <h4>@Resources.PaladarHostal.Telefono</h4>
+                    <p class="lead">+53 52461807</p>
+                </div>
+            </div>
+            <div class="col-sm-4 margin-b-30">
+                <i class="ion-location"></i>
+                <div class="overflow-hidden">
+                    <h4>@Resources.PaladarHostal.Direccion</h4>
+                    <p class="lead">
+                        @Html.ActionLink(Resources.PaladarHostal.Direccion_negocio, "Ubicacion", "Paladar", null, new { style = "color:white !important;" })
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 margin-b-30">
+                <a href="@Url.Action("Mostrar", "Paladar")">
+                    @{
+                        if (UICulture == "en")
+                        {
+                            <img src="@Url.Content("~/Content/logo-light_en.png")" alt="logo" class="logo-default" style="max-height:50px !important;height:50px !important;">
+                        }
+                        else
+                        {
+                            <img src="@Url.Content("~/Content/logo-light_es.png")" alt="logo" class="logo-default" style="max-height:50px !important;height:50px !important;">
+                        }
+                    }
+                </a>
+                <p style="margin:15px 0px 10px !important;">
+                     @Resources.PaladarHostal.Publicidad_hostal1 @Html.ActionLink(Resources.PaladarHostal.Hostal, "Mostrar", "Hostal", null, new { style = "color:#c0996b !important;font-size:15px;font-weight:bold;" }), @Resources.PaladarHostal.Publicidad_hostal2                     
+                </p>
+            </div>
+            <div class="col-md-4 margin-b-30">
+                <h3>@Resources.PaladarHostal.Comentarios_recientes</h3>
+                <ul class="list-unstyled recent-post">
+                    @{
+                        int i = 0;
+                        foreach (var item in Model.comentarios)
+                        {
+                            string dir_imagen = i == 0 ? "a1.jpg" : "avtar-1.jpg";
+                            <li class="clearfix">
+                                <a href="javascript:;">
+                                    <img src="@Url.Content(String.Format("~/Content/{0}", dir_imagen))" alt="" width="70">
+                                </a>
+                                <div class="post-content">
+                                    <h5 style="color:white;">@item.comentario</h5>
+                                    <span>@Utiles.Arreglar_Fecha(item.dia, item.mes, item.anno)</span>
+                                </div>
+                            </li>
+                            i++;
+
+                            if (i == 2)
+                            {
+                                break;
+                            }
+                        }
+                    }
+                </ul>
+                <p>
+                    <h5 class="text-center">
+                        <a href="@Url.Action("Comentario", "Paladar")" style="color:#c0996b !important;font-size:15px;font-weight:bold;">
+                            <i class="ion-chatbubbles"></i>
+                            @Resources.PaladarHostal.Mas_comentarios
+                        </a>
+                    </h5>
+                </p>
+            </div>
+            <div class="col-md-4 margin-b-30">
+                <h3>@Resources.PaladarHostal.Horario</h3>
+                @{ 
+                    var nuevos_horarios = Utiles.Agrupar_Horarios(Model.horarios);
+                    foreach (var item in nuevos_horarios)
+                    {
+                        <p><span class="text-color">@item.rango_dias:</span>@item.horario</p>
+                    }
+                }
+            </div>
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col-sm-12 text-center">
+                <ul class="list-inline f-social">
+                    <li><a href="javascript:;"><i class="ion-social-facebook"></i></a></li>
+                    <li><a href="javascript:;"><i class="ion-social-twitter"></i></a></li>
+                    <li><a href="javascript:;"><i class="ion-social-linkedin"></i></a></li>
+                    <li><a href="javascript:;"><i class="ion-social-googleplus"></i></a></li>
+                    <li><a href="javascript:;"><i class="ion-social-instagram"></i></a></li>
+                </ul>
+                <span>© @Resources.PaladarHostal.Copyright @DateTime.Now.Year. @Resources.PaladarHostal.Titulo</span>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<a href="javascript:;" class="scrollToTop" style="display: none;"><i class="ion-android-arrow-up"></i></a>

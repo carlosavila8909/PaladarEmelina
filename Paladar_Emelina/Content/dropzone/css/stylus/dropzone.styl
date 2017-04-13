@@ -1,0 +1,139 @@
+@import "nib"
+@import "basic"
+
+@keyframes loading
+  from
+    background-position: 0 -400px
+  to
+    background-position: -7px -400px
+
+.dropzone
+  border 1px solid rgba(0, 0, 0, 0.03)
+  min-height 360px
+  border-radius 3px
+  background rgba(0, 0, 0, 0.03)
+
+  padding 23px
+
+  .dz-default.dz-message
+    opacity 1
+    transition opacity 0.3s ease-in-out
+
+    image "../images/spritemap.png" 428px 406px
+    background-repeat no-repeat
+    background-position 0 0
+
+    position absolute
+    width 428px
+    height 123px
+    margin-left -(@width / 2)
+    margin-top -(@height / 2)
+    top 50%
+    left 50%
+    span
+      display none
+
+  &.dz-square
+    .dz-default.dz-message
+      background-position 0 -123px
+      width 268px
+      margin-left -(@width / 2)
+      height 174px
+      margin-top -(@height / 2)
+
+  &.dz-drag-hover
+    .dz-message
+      opacity 0.15
+
+  &.dz-started
+    .dz-message
+      display block
+      opacity 0 // Rather fade out nicely
+
+
+.dropzone
+.dropzone-previews
+
+  .dz-preview
+    box-shadow 1px 1px 4px rgba(0, 0, 0, 0.16)
+    font-size 14px
+
+
+    .dz-details
+
+    &.dz-image-preview
+      &:hover
+        .dz-details
+          img
+            display block
+            opacity 0.1
+
+    &.dz-success
+      .dz-success-mark
+        opacity 1
+    &.dz-error
+      .dz-error-mark
+        opacity 1
+      .dz-progress .dz-upload
+        background #EE1E2D
+
+    .dz-error-mark
+    .dz-success-mark
+      display block
+      opacity 0 // Fade in / out
+      transition opacity 0.4s ease-in-out
+      image "../images/spritemap.png" 428px 406px
+      background-repeat no-repeat
+
+      span
+        display none
+    .dz-error-mark
+      background-position -268px -123px
+    .dz-success-mark
+      background-position -268px -163px
+
+
+
+    .dz-progress
+      .dz-upload
+        animation loading 0.4s linear infinite
+        transition width 0.3s ease-in-out
+        border-radius 2px
+        position absolute
+        top 0
+        left 0
+        width 0%
+        height 100%
+
+        image "../images/spritemap.png" 428px 406px
+        background-repeat repeat-x
+        background-position 0px -400px
+
+
+    &.dz-success
+      .dz-progress
+        display block
+        opacity 0
+        transition opacity 0.4s ease-in-out
+
+    .dz-error-message
+      display block
+      opacity 0 // Rather fade in / out
+      transition opacity 0.3s ease-in-out
+
+    &:hover.dz-error
+      .dz-error-message
+        opacity 1
+
+  a.dz-remove
+    background-image linear-gradient(top, #fafafa, #eee)
+    border-radius 2px
+    border 1px solid #eee
+    text-decoration none
+    display block
+    padding 4px 5px
+    text-align center
+    color #aaa
+    margin-top 26px
+    &:hover
+      color #666

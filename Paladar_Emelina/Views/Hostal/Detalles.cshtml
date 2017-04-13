@@ -1,0 +1,263 @@
+﻿@model Reservacion_Login_Model
+@{    
+    Layout = "~/Views/Shared/_LayoutHostal.cshtml";
+    int id_reservacion = ViewBag.id_reservacion;
+}
+
+@section CSS{
+    <link href="@Url.Content("~/Content/font-awesome/css/font-awesome.min.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/Content/simple-line-icons/simple-line-icons.min.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/Content/Site.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/Content/bootstrap-datepicker/css/datepicker3.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/Content/icheck/skins/all.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/Content/plugins-md.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/Content/bootstrap-select/bootstrap-select.min.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/Content/select2/select2.css")" rel="stylesheet" />
+}
+
+<style>
+    .back_color {background-color: #f5f5f5 !important;}
+    .classbtn {min-height: 49px !important;min-width: 49px !important;margin-top: 28px;padding: 0px !important;border: 1px solid #e8e8e8 !important;background: #f5f5f5 !important;}
+    .classbtnreserv {background-color: #d14841 !important;border-color: #d14841 !important;height: 44px !important;font-size: 0.75rem !important;font-weight: 500 !important;text-transform: uppercase;}
+</style>
+
+<div style="text-align:center;margin-top:20px;">
+    <i class="ion-ios-home color_icon"></i>
+    @Html.ActionLink(Resources.PaladarHostal.Principal, "Mostrar", "Hostal", null, new { @class = "color_breadcrumb" })
+
+    <span class="padd_breadcrumb">
+        <i class="ion-ios-arrow-forward padd_breadcrumb color_icon"></i>
+        <span class="color_icon">@Resources.PaladarHostal.Datos_reservacion</span>
+    </span>
+</div>
+
+<div style="text-align:center;margin-top:20px;">
+    <h1 style="margin-top:30px;font-weight:bold;">@Resources.PaladarHostal.Datos_reservacion</h1>
+</div>
+
+@{
+    if (ViewBag.accion == 1)
+    {
+        <div class="overflow-hidden">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 col-md-offset-3">
+                        <div class="login-register-container" style="background:#f9f9f9;padding:50px;">
+                            @using (Html.BeginForm())
+                            {
+                                @Html.AntiForgeryToken()
+                                @Html.ValidationSummary()
+
+                                @Html.Hidden("id_reservacion", id_reservacion)
+                                <div class="form-group text-left">
+                                    @Html.LabelFor(m => m.login_reservacion.email, Resources.PaladarHostal.Correo, new { style = "font-size:14px !important;" })
+                                    @Html.TextBoxFor(m => m.login_reservacion.email, new { @class = "form-control" })
+                                </div>
+                                <div class="form-group text-left">
+                                    @Html.LabelFor(m => m.login_reservacion.password, Resources.PaladarHostal.Contrasenna, new { style = "font-size:14px !important;" })
+                                    @Html.PasswordFor(m => m.login_reservacion.password, new { @class = "form-control" })
+                                </div>
+                                <div class="clearfix">
+                                    <div class="pull-right text-right">
+                                        <input type="submit" class="btn btn-primary btn-lg" value="@Resources.PaladarHostal.Entrar">
+                                    </div>
+                                </div>
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div style="height:50px;"></div>
+    }
+    else
+    {
+        using (Html.BeginForm("Detalles", "Hostal", FormMethod.Post, new { id = "form_enviar" }))
+        {
+            <div id="static" class="modal fade" tabindex="-1" data-backdrop="static" data-keyboard="false">
+                <div class="modal-dialog">
+                    <div class="modal-content" style="border-radius:0px !important;">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+                            <h4 class="modal-title" style="font-size:20px !important;">@Resources.PaladarHostal.Eliminar</h4>
+                        </div>
+                        <div class="modal-body">
+                            @Html.Hidden("id_eliminar_reservacion", id_reservacion)
+                            @Html.AntiForgeryToken()
+                            <p>
+                                ¿@Resources.PaladarHostal.Desea_eliminar_reservacion?
+                            </p>
+                        </div>
+                        <div class="modal-footer" style="border:1px solid #e5e5e5;">
+                            <button type="submit" data-dismiss="modal" style="position:relative;top:4px;" class="btn btn-primary" onclick="$('#form_enviar').submit();">@Resources.PaladarHostal.Eliminar</button>
+                            <button type="button" data-dismiss="modal" class="btn btn-default">@Resources.PaladarHostal.Cancelar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+
+        <div class="mbr-section mbr-section-nopadding">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12 col-lg-10 col-lg-offset-1" data-form-type="formoid">
+                        @using (Html.BeginForm())
+                        {
+                            @Html.AntiForgeryToken()
+                            @Html.ValidationSummary("", new { id = "ul_errores" })
+                            @Html.Hidden("h_idioma", UICulture)
+                            @Html.Hidden("id_reservacion", id_reservacion)
+
+                            <div class="alert alert-info text-center" id="alert_info" style="display:none;">
+                                @Resources.PaladarHostal.Info_Reservacion
+                            </div>
+
+                            <div class="row row-sm-offset">
+                                <div class="col-xs-12 col-md-5">
+                                    <div class="form-group">
+                                        <div class="form-group text-left">
+                                            <div class="input-group date date-picker" data-date-format="dd/mm/yyyy" data-date-start-date="+0d">
+                                                @Html.LabelFor(m => m.reservacion_hostal.fecha_entrada, Resources.PaladarHostal.Fecha_entrada, new { @class = "form-control-label" })
+                                                @Html.TextBoxFor(m => m.reservacion_hostal.fecha_entrada, new { @class = "form-control back_color" })
+                                                <span class="input-group-btn">
+                                                    <button class="btn default classbtn" type="button"><i class="fa fa-calendar" style="font-size:14px !important;"></i></button>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-xs-12 col-md-5">
+                                    <div class="form-group">
+                                        <div class="form-group text-left">
+                                            <div class="input-group date date-picker" data-date-format="dd/mm/yyyy" data-date-start-date="+0d">
+                                                @Html.LabelFor(m => m.reservacion_hostal.fecha_salida, Resources.PaladarHostal.Fecha_salida, new { @class = "form-control-label" })
+                                                @Html.TextBoxFor(m => m.reservacion_hostal.fecha_salida, new { @class = "form-control back_color" })
+                                                <span class="input-group-btn">
+                                                    <button class="btn default classbtn" type="button"><i class="fa fa-calendar" style="font-size:14px !important;"></i></button>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-xs-12 col-md-4">
+                                    <div class="form-group">
+                                        @Html.LabelFor(m => m.reservacion_hostal.nombre_apellidos, Resources.PaladarHostal.Nombre_apellidos, new { @class = "form-control-label" })
+                                        @Html.TextBoxFor(m => m.reservacion_hostal.nombre_apellidos, new { @class = "form-control back_color" })
+                                    </div>
+                                </div>
+
+                                <div class="col-xs-12 col-md-4">
+                                    <div class="form-group">
+                                        @Html.LabelFor(m => m.reservacion_hostal.pais, Resources.PaladarHostal.Pais, new { @class = "form-control-label" })
+                                        @Html.TextBoxFor(m => m.reservacion_hostal.pais, new { @class = "form-control back_color" })
+                                    </div>
+                                </div>
+
+                                <div class="col-xs-12 col-md-4">
+                                    <div class="form-group">
+                                        @Html.LabelFor(m => m.reservacion_hostal.email, Resources.PaladarHostal.Correo, new { @class = "form-control-label" })
+                                        @Html.TextBoxFor(m => m.reservacion_hostal.email, new { @class = "form-control back_color" })
+                                    </div>
+                                </div>
+
+                                <div class="col-xs-12 col-md-4">
+                                    <div class="form-group">
+                                        @Html.LabelFor(m => m.reservacion_hostal.cant_acompannantes, Resources.PaladarHostal.Acompannantes, new { @class = "form-control-label" })
+                                        @Html.DropDownListFor(m => m.reservacion_hostal.cant_acompannantes, new SelectList(new List<int>() { 1, 2, 3, 4, 5, 6 }), new { @class = "form-control", style = "height:49px !important;" })
+                                    </div>
+                                </div>
+
+                                <div class="col-xs-12 col-md-5">
+                                    <div class="form-group">
+                                        @Html.HiddenFor(m => m.reservacion_hostal.habitaciones)
+                                        <label>@Resources.PaladarHostal.Habitaciones</label>
+                                        <div class="input-group">
+                                            <div class="icheck-list">
+                                                <label>
+                                                    <input type="checkbox" id="chk_hab1" class="icheck" data-checkbox="icheckbox_square-red"> <span style="font-size:0.875rem !important;">@Resources.PaladarHostal.Habitacion_1</span>
+                                                </label>
+                                                <label>
+                                                    <input type="checkbox" id="chk_hab2" class="icheck" data-checkbox="icheckbox_square-red"> <span style="font-size:0.875rem !important;">@Resources.PaladarHostal.Habitacion_2</span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                @Html.LabelFor(m => m.reservacion_hostal.mensaje_adicional, Resources.PaladarHostal.Mensaje_adicional, new { @class = "form-control-label" })
+                                @Html.TextAreaFor(m => m.reservacion_hostal.mensaje_adicional, new { @class = "form-control", rows = "5" })
+                            </div>
+                            <div>
+                                <a data-toggle="modal" href="#static" class="btn btn-primary btn-lg classbtnreserv" data-container="body">@Resources.PaladarHostal.Eliminar_reservacion</a>
+                                <button type="submit" class="btn btn-primary btn-lg classbtnreserv">@Resources.PaladarHostal.Modificar_reservacion</button>
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div style="height:30px;"></div>
+    }
+}
+
+@section Scripts{
+    @Scripts.Render("~/bundles/jqueryval")
+    <script src="@Url.Content("~/Content/bootstrap-datepicker/js/bootstrap-datepicker.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Content/icheck/icheck.min.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/form-icheck.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/components-pickers.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Content/bootstrap-select/bootstrap-select.min.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Content/select2/select2.min.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/components-dropdowns.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/metronic.js")" type="text/javascript"></script>
+
+    <script>
+        jQuery(document).ready(function () {
+            Metronic.init();
+            ComponentsPickers.init();
+            FormiCheck.init();
+            ComponentsDropdowns.init();
+
+            var hab = "@ViewBag.habitaciones";
+            if (hab != "") {
+                var arr_habits = hab.split("|");
+                for (var i = 0; i < arr_habits.length - 1; i++) {
+                    var id_checkbox = ".icheck-list > label:nth-child(" + arr_habits[i] + ") > div:nth-child(1) > ins:nth-child(2)";
+                    $(id_checkbox).click();
+                }
+            }
+
+            var msg = "@ViewBag.msg";
+            if (msg == "OK") {
+                $("#alert_info").css("display", "");
+                setTimeout(function () {
+                    $("#alert_info").css("display", "none");
+                }, 15000);
+            }
+
+            $(this).on("submit", function (event) {
+                var chek_hab1 = $("#chk_hab1").prop("checked");
+                var chek_hab2 = $("#chk_hab2").prop("checked");
+
+                var arr_hab = new Array();
+                if (chek_hab1)
+                    arr_hab.push(1);
+
+                if (chek_hab2)
+                    arr_hab.push(2);
+
+                var valor_h_hab = "";
+                if (arr_hab.length > 0) {
+                    for (var i = 0; i < arr_hab.length; i++) {
+                        valor_h_hab += arr_hab[i] + "|";
+                    }
+                }
+                $("#reservacion_hostal_habitaciones").val(valor_h_hab);
+            });
+        });
+    </script>
+}
+

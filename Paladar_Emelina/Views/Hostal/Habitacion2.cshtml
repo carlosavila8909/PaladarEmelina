@@ -1,0 +1,99 @@
+﻿@{
+    Layout = "~/Views/Shared/_LayoutHostal.cshtml";
+}
+
+<div style="text-align:center;margin-top:20px;">
+    <i class="ion-ios-home color_icon"></i>
+    @Html.ActionLink(Resources.PaladarHostal.Principal, "Mostrar", "Hostal", null, new { @class = "color_breadcrumb" })
+
+    <span class="padd_breadcrumb">
+        <i class="ion-ios-arrow-forward padd_breadcrumb color_icon"></i>
+        <span class="color_icon">@Resources.PaladarHostal.Habitacion_2</span>
+    </span>
+</div>
+
+<div class="mbr-section mbr-section__container mbr-section__container--middle" style="padding-top: 20px;padding-bottom:0px !important;">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 text-xs-center">
+                <h3 class="mbr-section-title display-2">@Resources.PaladarHostal.Detalles</h3>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 col-sm-8 col-xs-12" style="padding:0px !important;padding-right:15px !important;">
+            <section class="mbr-slider mbr-section mbr-section__container carousel slide mbr-section-nopadding" data-ride="carousel" data-keyboard="false" data-wrap="true" data-pause="false" data-interval="false" id="slider3-6" style="background-color: rgb(255, 255, 255);">
+                <div class="container boxed-slider" style="padding-top:0px !important;padding-bottom:20px !important;">
+                    <div>
+                        <div>
+                            <ol class="carousel-indicators">
+                                <li data-app-prevent-settings="" data-target="#slider3-6" class="active" data-slide-to="0"></li>
+                                <li data-app-prevent-settings="" data-target="#slider3-6" data-slide-to="1"></li>
+                                <li data-app-prevent-settings="" data-target="#slider3-6" data-slide-to="2"></li>
+                            </ol>
+                            <div class="carousel-inner" role="listbox">
+                                <div class="mbr-section mbr-section-hero carousel-item dark center active" data-bg-video-slide="false">
+                                    <div class="mbr-table-cell">
+                                        <div class="mbr-overlay"></div>
+                                        <div class="container-slide">
+                                            <img src="@Url.Content("~/assets/images/4.jpg")">
+                                        </div>
+                                    </div>
+                                </div><div class="mbr-section mbr-section-hero carousel-item dark center" data-bg-video-slide="false">
+                                    <div class="mbr-table-cell">
+                                        <div class="mbr-overlay"></div>
+                                        <div class="container-slide">
+                                            <img src="@Url.Content("~/assets/images/1.jpg")">
+                                        </div>
+                                    </div>
+                                </div><div class="mbr-section mbr-section-hero carousel-item dark center" data-bg-video-slide="false">
+                                    <div class="mbr-table-cell">
+                                        <div class="mbr-overlay"></div>
+                                        <div class="container-slide">
+                                            <img src="@Url.Content("~/assets/images/5.jpg")">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <a data-app-prevent-settings="" class="left carousel-control" role="button" data-slide="prev" href="#slider3-6">
+                                <span class="icon-prev" aria-hidden="true"></span>
+                                <span class="sr-only">@Resources.PaladarHostal.Anterior</span>
+                            </a>
+                            <a data-app-prevent-settings="" class="right carousel-control" role="button" data-slide="next" href="#slider3-6">
+                                <span class="icon-next" aria-hidden="true"></span>
+                                <span class="sr-only">@Resources.PaladarHostal.Siguiente</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <div class="mbr-plan-btn" style="float:right;margin-top:-1.5rem !important;">
+                <a href="@Url.Action("Habitacion1", "Hostal")" class="btn btn-black">
+                    <i class="ion-log-in"></i>
+                    @Resources.PaladarHostal.Habitacion_1
+                </a>
+            </div>
+        </div>
+        <div class="col-md-4 col-sm-4 col-xs-12">
+            <h3 class="mbr-plan-title" style="text-transform:uppercase;font-size:16px;">@Resources.PaladarHostal.Habitacion_2</h3>
+            <div class="mbr-price">
+                <span class="mbr-price-value">$</span>
+                <span class="mbr-price-figure">9.80</span><small class="mbr-price-term">/@Resources.PaladarHostal.Noche.</small>
+            </div>
+
+            <div class="mbr-plan-list" style="padding-top:0px !important;">
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item"><i class="ion-android-home font_icono"> <span class="font_service">@Resources.PaladarHostal.Habitacion_sencilla</span></i></li>
+                    <li class="list-group-item"><i class="ion-beer font_icono"> <span class="font_service">@Resources.PaladarHostal.Minibar</span></i></li>
+                    <li class="list-group-item"><i class="ion-android-restaurant font_icono"> <span class="font_service">@Resources.PaladarHostal.Paladar</span></i></li>
+                    <li class="list-group-item"><i class="ion-wifi font_icono"> <span class="font_service">@Resources.PaladarHostal.Conexion_internet</span></i></li>
+                    <li class="list-group-item"><i class="ion-android-delete font_icono"> <span class="font_service">@Resources.PaladarHostal.Banno_interior</span></i></li>
+                    <li class="list-group-item"><i class="ion-android-bar font_icono"> <span class="font_service">@Resources.PaladarHostal.Servicio_gastronomia</span></i></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

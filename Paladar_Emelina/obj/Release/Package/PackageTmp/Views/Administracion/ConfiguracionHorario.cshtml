@@ -1,0 +1,63 @@
+﻿@model List<Horario>
+@{
+    ViewBag.Titulo_pagina = "Horario del negocio";
+}
+
+@section breadcrumb{
+    <span class="padd_breadcrumb">
+        <i class="ion-ios-arrow-forward padd_breadcrumb"></i>
+        @Html.ActionLink("Administración", "Configuracion", "Administracion", null, new { @class = "color_breadcrumb" })
+    </span>
+
+    <span class="padd_breadcrumb">
+        <i class="ion-ios-arrow-forward padd_breadcrumb"></i>
+        Horario
+    </span>
+}
+
+@section CSS{
+    <link href="@Url.Content("~/Content/font-awesome/css/font-awesome.min.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/Content/Site.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/Content/components-md.css")" rel="stylesheet" />
+}
+
+<style>
+    .cart-table > tbody > tr > td {padding-bottom:10px;padding-top:10px;}
+</style>
+
+<div class="table-responsive">
+    <table class="table table-bordered cart-table">
+        <thead>
+            <tr>
+                <th class="text-center hide">Id</th>
+                <th class="text-center"><i class="fa fa-calendar"></i>&nbsp;Día</th>
+                <th class="text-center"><i class="fa fa-clock-o"></i>&nbsp;Horario</th>
+                <th class="text-center"></th>
+            </tr>
+        </thead>
+        <tbody>
+            @{
+                foreach (var item in Model)
+                {
+                    <tr>
+                        <td class="hide">@item.id_horario</td>
+                        <td>@item.dia</td>
+                        <td>
+                            @{ 
+                                if (item.hora_entrada == "Cerrado")
+                                {
+                                    <span>@item.hora_entrada</span>
+                                }
+                                else
+                                {
+                                    <span>@item.hora_entrada - @item.hora_salida</span>
+                                }
+                            }
+                        </td>
+                        <td>@Html.ActionLink("Editar", "GestionarHorario", "Administracion", new { id = item.id_horario }, new { @class = "label label-sm label-success label-mini" })</td>
+                    </tr>
+                }
+            }
+        </tbody>
+    </table>
+</div>

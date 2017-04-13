@@ -1,0 +1,59 @@
+﻿@{
+    ViewBag.Titulo_pagina = Resources.PaladarHostal.Menu;
+}
+
+@section breadcrumb{
+    <span class="padd_breadcrumb">
+        <i class="ion-ios-arrow-forward padd_breadcrumb"></i>
+        @Resources.PaladarHostal.Menu
+    </span>
+}
+
+<div class="container">
+    <div class="row vertical-align-child">
+        <div class="col-md-8">
+            <div>
+                <ul class="list-inline menu-tabs margin-b-30" role="tablist">
+                    @{
+                        DirectoryInfo[] carpetas = new DirectoryInfo(Server.MapPath("~/Content/Menu")).GetDirectories();
+                        for (int i = 0; i < carpetas.Length; i++)
+                        {
+                            <li role="presentation" class="@String.Format("{0}", i == 0 ? "active" : "")"><a href="@String.Format("#{0}", i + 1)" aria-controls="drink" role="tab" data-toggle="tab">@Resources.Dinamicos.ResourceManager.GetString(carpetas[i].ToString())</a></li>
+                        }
+                    }
+                </ul>
+                <div class="tab-content">
+                    @{
+                        for (int i = 0; i < carpetas.Length; i++)
+                        {
+                            DirectoryInfo[] menus = carpetas[i].GetDirectories();
+                            var pos = i + 1;
+                            <div role="tabpanel" class="@String.Format("tab-pane {0}", i == 0 ? "active" : "")" id="@pos">
+                                <ul class="list-unstyled text-left">
+                                    @{
+                                        for (int j = 0; j < menus.Length; j++)
+                                        {
+                                            Datos_Menu datos_menu = Utiles.Obtener_Datos_XML(Server.MapPath(String.Format("~/Content/Menu/{0}/{1}/datos.xml", carpetas[i].Name, menus[j].Name)));
+                                            <li class="menu-box clearfix margin-b-20">
+                                                <div class="thumb">
+                                                    <img src="@Url.Content(String.Format("~/Content/Menu/{0}/{1}/img.jpg", carpetas[i].Name, menus[j].Name))" width="70" class="img-responsive" alt="">
+                                                </div>
+                                                <div class="menu-content">
+                                                    <h4>
+                                                        <a href="@Url.Action("Plato", "Paladar", new { id = menus[j].Name })" style="font-weight:bold;">@Resources.Dinamicos.ResourceManager.GetString(datos_menu.nombre_plato)</a>
+                                                        <span style="color:#c0996b;font-weight:600;">$@Utiles.Arreglar_Precio(datos_menu.precio)</span>
+                                                    </h4>
+                                                </div>
+                                            </li>
+                                        }
+                                    }
+                                </ul>
+                            </div>
+                        }
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

@@ -1,0 +1,71 @@
+﻿@{
+    Layout = "~/Views/Shared/_LayoutHostal.cshtml";
+}
+
+<div style="text-align:center;margin-top:20px;">
+    <i class="ion-ios-home color_icon"></i>
+    @Html.ActionLink(Resources.PaladarHostal.Principal, "Mostrar", "Hostal", null, new { @class = "color_breadcrumb" })
+
+    <span class="padd_breadcrumb">
+        <i class="ion-ios-arrow-forward padd_breadcrumb color_icon"></i>
+        <span class="color_icon">Administración</span>
+    </span>
+</div>
+
+<style>
+    .tammano_letra {font-size: 18px;color:#444 !important;text-decoration:none !important;text-transform:uppercase;}
+    .border_dashed{border-bottom:1px dashed #eee;}
+    .descc{color:#9C9288 !important;font-size:15px;}
+    a:hover{color:#c0996b !important;}
+</style>
+
+<div class="mbr-section mbr-section__container mbr-section__container--middle" style="padding-top: 20px;padding-bottom:0px !important;">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 text-xs-center">
+                <h3 class="mbr-section-title display-2">Configuración</h3>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row menu-filter-items">
+        <div class="col-sm-4 menu-item" style="margin-bottom:30px;">
+            <div class="menu-box clearfix ">
+                <div class="menu-content">
+                    <h4 class="border_dashed"><a class="tammano_letra" href="@Url.Action("ConfiguracionReservacion")"><i class="ion-android-calendar"></i> Reservación</a></h4>
+                    <p class="descc">Gestione las reservaciones del negocio.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-4 menu-item" style="margin-bottom:30px;">
+            <div class="menu-box clearfix ">
+                <div class="menu-content">
+                    <h4 class="border_dashed"><a class="tammano_letra" href="@Url.Action("ConfiguracionComentarios")"><i class="ion-android-calendar"></i> Comentarios</a></h4>
+                    <p class="descc">Elimine cualquier comentario que no sea de su agrado.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-4 menu-item" style="margin-bottom:30px;">
+            <div class="menu-box clearfix ">
+                <div class="menu-content">
+                    <h4 class="border_dashed"><a class="tammano_letra" href="@Url.Action("CambiarPassword", "Hostal")"><i class="ion-android-unlock"></i> Cambiar contraseña</a></h4>
+                    <p class="descc">Actualice su contraseña de administración.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-4 menu-item" style="margin-bottom:30px;">
+            <div class="menu-box clearfix ">
+                <div class="menu-content">
+                    <h4 class="border_dashed"><a class="tammano_letra" href="@Url.Action("CerrarSesion", "Hostal")"><i class="ion-log-out"></i> Cerrar sesión</a></h4>
+                    <p class="descc">Finalice su sesión de administración.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div style="height:30px;"></div>

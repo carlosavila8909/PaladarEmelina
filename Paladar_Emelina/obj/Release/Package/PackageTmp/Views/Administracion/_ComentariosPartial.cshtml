@@ -1,0 +1,38 @@
+﻿@model List<Comentario>
+    
+<div class="table-responsive">
+    <table class="table table-bordered cart-table">
+        <thead>
+            <tr>
+                <th class="text-center hide">Id</th>
+                <th class="text-center"><i class="ion-android-contact"></i>&nbsp;Nombre y Apellidos</th>
+                <th class="text-center"><i class="ion-chatbubble-working"></i>&nbsp;Comentario</th>
+                <th class="text-center"><i class="ion-android-calendar"></i>&nbsp;Fecha</th>
+                <th class="text-center"></th>
+            </tr>
+        </thead>
+        <tbody>
+    @{
+        if (Model.Count > 0)
+        {
+            foreach (var item in Model)
+            {
+                <tr>
+                    <td class="hide">@item.id_comentario</td>
+                    <td>@item.nombre_ap</td>
+                    <td>@item.comentario</td>
+                    <td>@Utiles.Arreglar_Fecha(item.dia, item.mes, item.anno)</td>
+                    <td>@Html.ActionLink("Eliminar", "", null, new { id = item.id_comentario }, new { @class = "label label-sm label-danger label-mini", data_toggle = "modal", href = "#static", data_container = "body", onclick = String.Format("eliminar({0},'{1}');", item.id_comentario, item.comentario) })</td>
+                </tr>
+            }
+        }
+        else
+        {
+            <tr>
+                <td colspan="4">No se encontraron comentarios.</td>
+            </tr>
+        }
+    }
+        </tbody>
+    </table>
+</div>

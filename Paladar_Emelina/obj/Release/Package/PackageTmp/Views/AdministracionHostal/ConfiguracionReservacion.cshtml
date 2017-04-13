@@ -1,0 +1,176 @@
+﻿@model List<Reservacion_Hostal>
+@{
+    Layout = "~/Views/Shared/_LayoutHostal.cshtml";
+    var meses = new SelectList(new List<string>() { "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre" }, Utiles.Obtener_Mes(DateTime.Now.Month));
+}
+
+@section CSS{
+    <link href="@Url.Content("~/Content/font-awesome/css/font-awesome.min.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/Content/simple-line-icons/simple-line-icons.min.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/Content/plugins-md.css")" rel="stylesheet" />
+}
+
+<style>
+    .table thead th{border-bottom:transparent !important;}
+</style>
+
+<div style="text-align:center;margin-top:20px;">
+    <i class="ion-ios-home color_icon"></i>
+    @Html.ActionLink(Resources.PaladarHostal.Principal, "Mostrar", "Hostal", null, new { @class = "color_breadcrumb" })
+
+    <span class="padd_breadcrumb">
+        <i class="ion-ios-arrow-forward padd_breadcrumb color_icon"></i>
+        @Html.ActionLink("Administración", "Configuracion", "AdministracionHostal", null, new { @class = "color_breadcrumb" })
+    </span>
+
+    <span class="padd_breadcrumb">
+        <i class="ion-ios-arrow-forward padd_breadcrumb color_icon"></i>
+        <span class="color_icon">Reservaciones</span>
+    </span>
+</div>
+
+<div class="mbr-section mbr-section__container mbr-section__container--middle" style="padding-top: 20px;padding-bottom:0px !important;">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 text-xs-center">
+                <h3 class="mbr-section-title display-2">Reservaciones</h3>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        @using (Html.BeginForm("ConfiguracionReservacion", "AdministracionHostal", FormMethod.Post, new { id = "form_enviar" }))
+        {
+            @Html.AntiForgeryToken()
+            <div id="static" class="modal fade" tabindex="-1" data-backdrop="static" data-keyboard="false">
+                <div class="modal-dialog">
+                    <div class="modal-content" style="border-radius:0px !important;">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+                            <h4 class="modal-title" style="font-size:20px !important;">Eliminar</h4>
+                        </div>
+                        <div class="modal-body text-left">
+                            @Html.Hidden("id_eliminar")
+                            <p>
+                                ¿Desea eliminar la reservacion?
+                            </p>
+                            <p style="font-size:15px;">
+                                <b>Nombre y Apellidos: </b><span id="span_eliminar_nombre_apellidos"></span>
+                            </p>
+                            <p style="font-size:15px;">
+                                <b>Correo electrónico: </b><span id="span_eliminar_email"></span>
+                            </p>
+                            <p style="font-size:15px;">
+                                <b>Fecha entrada: </b><span id="span_eliminar_fecha_entrada"></span>
+                            </p>
+                            <p style="font-size:15px;">
+                                <b>Fecha salida: </b><span id="span_eliminar_fecha_salida"></span>
+                            </p>
+                        </div>
+                        <div class="modal-footer" style="border:1px solid #e5e5e5;">
+                            <button type="button" data-dismiss="modal" style="position:relative;top:4px;" class="btn btn-primary" onclick="javscript: $('#form_enviar').submit();">Eliminar</button>
+                            <button type="button" data-dismiss="modal" class="btn btn-default">Cancelar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-xs-12 col-lg-10 col-lg-offset-1" data-form-type="formoid">
+                    <div class="col-xs-12 col-md-3 col-md-offset-3">
+                        <div class="form-group">
+                            @Html.Label("mes", "Mes", new { @class = "form-control-label" })
+                            @Html.DropDownList("mes", meses, new { @class = "form-control", style = "min-height:42px !important;padding-top:11px !important;padding-bottom:10px !important;" })
+                        </div>
+                    </div>
+
+                    <div class="col-xs-12 col-md-3">
+                        <div class="form-group">
+                            @Html.Label("anno", "Año", new { @class = "form-control-label" })
+                            <div id="spinner1">
+                                <div class="input-group input-small">
+                                    @Html.TextBox("anno", DateTime.Now.Year, new { @class = "spinner-input form-control", style = "min-height:42px !important;" })
+                                    <div class="spinner-buttons input-group-btn btn-group-vertical" style="padding-bottom:1px !important;">
+                                        <button type="button" class="btn spinner-up btn-xs blue" style="border-radius:0px 5px 0px 0px !important;height:21px !important;" onclick="peticionAjax();">
+                                            <i class="fa fa-angle-up"></i>
+                                        </button>
+                                        <button type="button" class="btn spinner-down btn-xs blue borde" style="border-radius:0px 0px 5px 0px !important;height:21px !important;" onclick="peticionAjax();">
+                                            <i class="fa fa-angle-down"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div style="height:20px;"></div>
+
+            <div id="div_reservaciones">
+                @Html.Partial("_ReservacionesPartial", Model)
+            </div>
+        }
+    </div>
+</div>
+<div style="height:30px;"></div>
+
+@section Scripts{
+    <script src="@Url.Content("~/Content/fuelux/js/spinner.min.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Content/bootstrap-touchspin/bootstrap.touchspin.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/components-form-tools.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/metronic.js")" type="text/javascript"></script>
+
+    <script>
+        jQuery(document).ready(function () {
+            Metronic.init();
+            ComponentsFormTools.init();
+
+            $("#mes").on("change", function () {
+                peticionAjax();
+            });
+        });
+
+        function peticionAjax()
+        {
+            $.ajax({
+                url: "@Url.Action("Reservacion_Result", "AdministracionHostal")",
+                method: "POST",
+                data: { mes: Obtener_Numero_Mes(), anno: $("#anno").val() },
+                success: function (data)
+                {
+                    $("#div_reservaciones").html(data);
+                }
+            });
+        }
+
+        function eliminar(id_reservacion, nombre_apellidos, email, fecha_entrada, fecha_salida)
+        {
+            $("#id_eliminar").val(id_reservacion);
+            $("#span_eliminar_nombre_apellidos").html(nombre_apellidos);
+            $("#span_eliminar_email").html(email);
+            $("#span_eliminar_fecha_entrada").html(fecha_entrada);
+            $("#span_eliminar_fecha_salida").html(fecha_salida);
+        }
+
+        function Obtener_Numero_Mes()
+        {
+            var mes = $("#mes").val();
+            switch (mes) {
+                case "Enero": return 1;
+                case "Febrero": return 2;
+                case "Marzo": return 3;
+                case "Abril": return 4;
+                case "Mayo": return 5;
+                case "Junio": return 6;
+                case "Julio": return 7;
+                case "Agosto": return 8;
+                case "Septiembre": return 9;
+                case "Octubre": return 10;
+                case "Noviembre": return 11;
+                default: return 12;
+            }
+        }
+    </script>
+}

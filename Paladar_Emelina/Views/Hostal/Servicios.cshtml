@@ -1,0 +1,66 @@
+﻿@{
+    Layout = "~/Views/Shared/_LayoutHostal.cshtml";
+}
+
+<div style="text-align:center;margin-top:20px;">
+    <i class="ion-ios-home color_icon"></i>
+    @Html.ActionLink(Resources.PaladarHostal.Principal, "Mostrar", "Hostal", null, new { @class = "color_breadcrumb" })
+
+    <span class="padd_breadcrumb">
+        <i class="ion-ios-arrow-forward padd_breadcrumb color_icon"></i>
+        <span class="color_icon">@Resources.PaladarHostal.Servicios</span>
+    </span>
+</div>
+
+<section class="mbr-cards mbr-section mbr-section-nopadding" id="features7-1t">
+    <div class="col-md-12" style="text-align:center;margin-top:25px;">
+        <h3 class="mbr-section-title display-2" style="margin-bottom:0px !important;">@Resources.PaladarHostal.Servicios</h3>
+    </div>
+    <div class="mbr-cards-row row">
+        <div class="mbr-cards-col col-xs-12 col-md-3" style="padding-top:50px; padding-bottom:50px;">
+            <div class="container">
+                <div class="card cart-block">
+                    <div class="card-img iconbox"><a href="javascript:;" class="ion-wifi mbr-iconfont mbr-iconfont-features7" style="color: rgb(255, 255, 255);"></a></div>
+                    <div class="card-block">
+                        <h4 class="card-title">@Resources.PaladarHostal.Conexion_internet</h4>
+                        <p class="card-text">@Resources.PaladarHostal.Descripcion_conexion_internet</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="mbr-cards-col col-xs-12 col-md-3" style="padding-top:50px; padding-bottom:50px;">
+            <div class="container">
+                <div class="card cart-block">
+                    <div class="card-img iconbox"><a href="javascript:;" class="ion-android-restaurant mbr-iconfont mbr-iconfont-features7" style="color: rgb(255, 255, 255);"></a></div>
+                    <div class="card-block">
+                        <h4 class="card-title">@Html.ActionLink(Resources.PaladarHostal.Paladar, "Mostrar", "Paladar", null, new { style = "color:#d14841;" })</h4>
+                        <p class="card-text">@Resources.PaladarHostal.Descripcion_servicio_paladar</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="mbr-cards-col col-xs-12 col-md-3" style="padding-top:50px; padding-bottom:50px;">
+            <div class="container">
+                <div class="card cart-block">
+                    <div class="card-img iconbox"><a href="javascript:;" class="ion-android-car mbr-iconfont mbr-iconfont-features7" style="color: rgb(255, 255, 255);"></a></div>
+                    <div class="card-block">
+                        <h4 class="card-title">@Resources.PaladarHostal.Garage</h4>
+                        <p class="card-text">@Resources.PaladarHostal.Descripcion_servicio_garage</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="mbr-cards-col col-xs-12 col-md-3" style="padding-top:50px; padding-bottom:50px;">
+            <div class="container">
+                <div class="card cart-block">
+                    <div class="card-img iconbox"><a href="javascript:;" class="ion-tshirt mbr-iconfont mbr-iconfont-features7" style="color: rgb(255, 255, 255);"></a></div>
+                    <div class="card-block">
+                        <h4 class="card-title">@Resources.PaladarHostal.Lavanderia</h4>
+                        <p class="card-text">@Resources.PaladarHostal.Descripcion_servicio_lavanderia</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

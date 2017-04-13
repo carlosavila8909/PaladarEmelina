@@ -1,0 +1,123 @@
+﻿@{
+    ViewBag.Titulo_pagina = Resources.PaladarHostal.Galeria_imagenes;
+}
+
+@section breadcrumb{
+    <span class="padd_breadcrumb">
+        <i class="ion-ios-arrow-forward padd_breadcrumb"></i>
+        @Resources.PaladarHostal.Galeria
+    </span>
+}
+
+@section CSS{
+    <link href="@Url.Content("~/Content/font-awesome/css/font-awesome.min.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/Content/simple-line-icons/simple-line-icons.min.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/Content/dropzone/css/dropzone.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/Content/lightbox.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/Content/Site.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/Content/components-md.css")" rel="stylesheet" />
+}
+
+<div class="container-fluid gallery no-padd">
+    @Html.Hidden("titulo_subir", Resources.PaladarHostal.Subir_imagenes)
+    @Html.Hidden("tamanno_maximo", Resources.PaladarHostal.Tamanno_maximo)
+    @Html.Hidden("click_arrastrar", Resources.PaladarHostal.Click_arrastrar)
+    @Html.Hidden("imagen_gal", Resources.PaladarHostal.Imagen)
+
+    <div class="btn-group" id="btn_acciones">
+        <a class="btn btn-circle btn-default btn-sm" href="javascript:;" data-toggle="dropdown" onclick="SubirImagen();">
+            <i class="ion-image"></i> @Resources.PaladarHostal.Imagenes
+        </a>
+    </div>
+    <div class="space-20"></div>
+
+    <div class="col-md-12 hide" id="div_form_subir_img">
+        @using (Html.BeginForm("UploadFileGaleria", "Paladar", FormMethod.Post, new { @class = "dropzone", id = "dropzoneForm", enctype = "multipart/form-data" }))
+        {
+            <a href="javascript:;" class="btn btn-icon-only btn-circle default" style="float:right;" onclick="Cancelar();">
+                <i class="fa fa-times"></i>
+            </a>
+        }
+        <div class="space-20"></div>
+    </div>
+    <div id="div_imagenes">
+        @Html.Partial("_ImagenesGaleriaPartial")
+    </div>
+</div>
+
+@section Scripts{
+    <script src="@Url.Content("~/Content/dropzone/dropzone.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/lightbox.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/metronic.js")" type="text/javascript"></script>
+
+    <script>
+        Dropzone.options.dropzoneForm = {
+            acceptedFiles: "image/*",
+            init: function () {
+                this.on("success", function (file) {
+                    var removeButton = Dropzone.createElement("<button class='btn btn-icon-only red' style='margin-top:10px;float:right;' title='@Resources.PaladarHostal.Eliminar_imagen'><i class='fa fa-times'></i></button>");
+                    var _this = this;
+                    Actualizar_Galeria();
+
+                    removeButton.addEventListener("click", function (e) {
+                        e.preventDefault();
+                        e.stopPropagation();
+
+                        $.ajax({
+                            url: "@Url.Action("EliminarImagenGaleria", "Paladar")",
+                            method: "POST",
+                            data: { dir_imagen: file.name },
+                            success: function (data) {
+                                if (data == "OK")
+                                {
+                                    _this.removeFile(file);
+                                    Actualizar_Galeria();
+                                }
+                                else
+                                    file.previewTemplate.lastElementChild.firstChild.innerHTML = "@Resources.PaladarHostal.Error_eliminar_image";
+                            },
+                            error: function () {
+                                file.previewTemplate.lastElementChild.firstChild.innerHTML = "@Resources.PaladarHostal.Error_eliminar_image";
+                            }
+                        });
+                    });
+
+                    file.previewElement.appendChild(removeButton);
+                });
+
+                this.on("error", function (file, errorMessage, xhr) {
+                    file.previewTemplate.lastElementChild.firstChild.innerHTML = "@Resources.PaladarHostal.Error_imagen_tamanno";
+                });
+            }
+        };
+
+        jQuery(document).ready(function(){
+            $("#div_container_body").removeClass("container");
+            $("#div_container_body").addClass("container-fluid");
+            $("#div_container_body").css("padding-right", "0px");
+            $("#div_container_body").css("padding-left", "0px");
+            Metronic.init();
+        });
+
+        function SubirImagen() {
+            $("#div_form_subir_img").removeClass("hide");
+        }
+
+        function Cancelar() {
+            $("#div_form_subir_img").addClass("hide");
+        }
+
+        function Actualizar_Galeria()
+        {
+            $.ajax({
+                url: "@Url.Action("ImagenesGaleria_Result", "Paladar")",
+                method: "POST",
+                success: function (data)
+                {
+                    $("#div_imagenes").html(data);
+                    Metronic.init();
+                }
+            });
+        }
+    </script>
+}
